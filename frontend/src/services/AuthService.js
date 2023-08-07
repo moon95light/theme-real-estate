@@ -4,7 +4,6 @@ import {
     loginConfirmedAction,
     logout,
 } from '../store/actions/AuthActions';
-import axios from 'axios';
 
 export function signUp(email, password) {
     //axios call
