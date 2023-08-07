@@ -1,0 +1,93 @@
+
+.welcome-text{
+	span,
+	p{
+		display:none;
+	}
+}
+.page-titles {
+    margin-bottom: 25px;
+    display: block;
+    background: $body-bg;
+    display: block;
+	
+	[class*="col-"]{
+		display: block !important;
+		max-width: 100%;
+		width: 100%;
+		margin: 0;
+	}
+	
+    .justify-content-sm-end{
+        align-items: center;
+    }
+
+    h4 {
+        margin-bottom: 10px;
+		margin-top: 0;
+		color: #000;
+		font-size: 1.75rem;
+		font-weight: 600;
+		
+        span {
+            font-size: 1.25rem;
+        }
+    }
+    .breadcrumb {
+        margin-bottom: 0;
+        padding: 0;
+        background: transparent;
+        // font-size: 0.875rem;
+        li {
+            margin-top: 0;
+            margin-bottom: 0;
+			font-size: 18px;
+			@include respond('laptop') {
+				font-size: 15px;
+			}
+            a{
+               color: #656773; 
+
+            }
+
+            &.active a{
+                color: $primary;
+				font-weight:600;
+            }
+        }
+        
+        /* .breadcrumb-item + .breadcrumb-item {
+            &:before {
+                content: "\e606";
+                font-family: 'simple-line-icons';
+                // font-weight: 4;
+                font-size: 10px;
+            }
+        } */
+
+        &-datepicker{
+            font-size: 0.75rem;
+            color: $muted;
+
+            &__icon{
+                font-size: 0.875rem;
+            }
+        }
+    }
+
+    .breadcrumb-widget{
+        .border-dark{
+            border-color: $gray-300!important;
+        }
+        h4{
+            color: $strong;
+            font-weight: 600;
+        }
+        @include respond('phone') {
+            text-align: left!important;
+            margin-bottom: 0.9375rem;
+        }
+    }
+    
+}
+
