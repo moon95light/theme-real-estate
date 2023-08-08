@@ -30,14 +30,22 @@ export function login(email, password) {
 }
 
 export function formatError(errorResponse) {
-    // console.log(typeof errorResponse);
-    if(errorResponse === '12'){
+    if (errorResponse === '13') {
+        errorMessage = 'NOT FIND USER';
+    }
+    if (errorResponse === '14') {
+        errorMessage = 'INVALID_PASSWORD';
+    }
+    if (errorResponse === '12') {
         errorMessage = 'EMAIL_EXISTS';
     }
-    if(errorResponse === '11'){
+    if (errorResponse === '11') {
         errorMessage = 'USER_EXISTS';
     }
     switch (errorMessage) {
+        case 'NOT FIND USER':
+            swal("Oops", "Not Find User", "error");
+            break;
         case 'USER_EXISTS':
             swal("Oops", "Username is required", "error");
             break;
@@ -62,6 +70,7 @@ export function formatError(errorResponse) {
 }
 
 export function saveTokenInLocalStorage(tokenDetails) {
+    console.log("tokenDetails", tokenDetails);
     tokenDetails.expireDate = new Date(
         new Date().getTime() + tokenDetails.expiresIn * 1000,
     );
@@ -76,7 +85,6 @@ export function runLogoutTimer(dispatch, timer, history) {
 
 export function checkAutoLogin(dispatch, history) {
     const tokenDetailsString = localStorage.getItem('userDetails');
-    console.log(tokenDetailsString);
     let tokenDetails = '';
     if (!tokenDetailsString) {
         dispatch(logout(history));

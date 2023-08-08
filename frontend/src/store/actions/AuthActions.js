@@ -53,16 +53,29 @@ export function loginAction(email, password, history) {
     return (dispatch) => {
         login(email, password)
             .then((response) => {
-                saveTokenInLocalStorage(response.data);
-                runLogoutTimer(
-                    dispatch,
-                    response.data.expiresIn * 1000,
-                    history,
-                );
-                dispatch(loginConfirmedAction(response.data));
-                history.push('/dashboard');
-                //window.location.reload();
-                //history.pushState('/index');
+                /**
+                 * @ receive the request backend error
+                 */
+                if (response.data.error) {
+                    const errorMessage = formatError(response.data.error);
+                    dispatch(loginFailedAction(errorMessage));
+                } else {
+                    const tokendetail = {
+                        expiresIn: 1000,
+                        idToken: response.data.userID
+                    }
+                    // console.log(tokendetail);
+                    saveTokenInLocalStorage(tokendetail);
+                    runLogoutTimer(
+                        dispatch,
+                        1000 * 1000,
+                        history,
+                    );
+                    dispatch(loginConfirmedAction(response.data));
+                    history.push('/dashboard');
+                    window.location.reload();
+                    //history.pushState('/index');
+                }
 
             })
             .catch((error) => {

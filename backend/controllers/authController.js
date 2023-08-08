@@ -51,7 +51,7 @@ const loginUser = async (req, res) => {
         const user = await User.findOne({ email });
         if (!user) {
             return res.json({
-                error: 'Not Find user.'
+                error: '13' // Not Find user.
             })
         }
         const match = await comparePassword(password, user.password);
@@ -66,7 +66,7 @@ const loginUser = async (req, res) => {
         
         if(!match) {
             res.json({
-                error: 'Password do not match.'
+                error: '14' //Password do not match.
             })
         }
     } catch (error) {
