@@ -76,6 +76,7 @@ export function runLogoutTimer(dispatch, timer, history) {
 
 export function checkAutoLogin(dispatch, history) {
     const tokenDetailsString = localStorage.getItem('userDetails');
+    console.log(tokenDetailsString);
     let tokenDetails = '';
     if (!tokenDetailsString) {
         dispatch(logout(history));

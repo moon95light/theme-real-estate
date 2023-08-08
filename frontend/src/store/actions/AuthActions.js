@@ -17,10 +17,12 @@ export function signupAction(name, email, password, history) {
     return (dispatch) => {
         signUp(name, email, password)
             .then((response) => {
+                /**
+                 * @ receive the request backend error
+                 */
                 if (response.data.error) {
                     const errorMessage = formatError(response.data.error);
                     dispatch(signupFailedAction(errorMessage));
-
                 } else {
                     saveTokenInLocalStorage(response.data);
                     runLogoutTimer(
