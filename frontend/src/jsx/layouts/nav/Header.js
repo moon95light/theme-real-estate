@@ -336,11 +336,11 @@ const Header = ({ onNote }) => {
                 >
                   <div className="header-info">
                     <span className="text-black">
-                      <strong>Henry Jr.</strong>
+                      <strong>xyz@company.com</strong>
                     </span>
-                    <p className="fs-12 mb-0">Admin</p>
+                    {/* <p className="fs-12 mb-0">Admin</p> */}
                   </div>
-                  <img src={profile} width={20} alt="" />
+                  {/* <img src={profile} width={20} alt="" /> */}
                 </Dropdown.Toggle>
                 <Dropdown.Menu align="right" className="mt-2">
                   <Link to="/app-profile" className="dropdown-item ai-icon">
