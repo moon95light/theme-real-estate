@@ -12,7 +12,7 @@ const registerUser = async (req, res) => {
         // Check if name was entered 
         if (!name) {
             return res.json({
-                error: 'name is required'
+                error: '11'// name is required
             })
         };
         // Check is password is good
@@ -25,7 +25,7 @@ const registerUser = async (req, res) => {
         const exist = await User.findOne({ email });
         if (exist) {
             return res.json({
-                error: 'Email is taken already'
+                error: '12' //email same in database.
             })
         }
 

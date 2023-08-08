@@ -9,10 +9,10 @@ import logo from "../../images/logo-full.png";
 import loginbg from "../../images/pic1.png";
 
 function Login (props) {
-  const [email, setEmail] = useState('demo@example.com');
+  const [email, setEmail] = useState('');
     let errorsObj = { email: '', password: '' };
     const [errors, setErrors] = useState(errorsObj);
-    const [password, setPassword] = useState('123456');
+    const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
 
@@ -22,6 +22,10 @@ function Login (props) {
         const errorObj = { ...errorsObj };
         if (email === '') {
             errorObj.email = 'Email is Required';
+            error = true;
+        }
+		if (password.length < 6 ) {
+            errorObj.password = 'Password must be more 6 characters';
             error = true;
         }
         if (password === '') {

@@ -7,6 +7,7 @@ import {
     signupAction,
 } from '../../store/actions/AuthActions';
 function Register(props) {
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     let errorsObj = { email: '', password: '' };
     const [errors, setErrors] = useState(errorsObj);
@@ -23,7 +24,12 @@ function Register(props) {
             error = true;
         }
 
-        if (password === '') {
+        if(password.length < 6 ){
+            errorObj.password = 'Password must be more 6 characters.';
+            error = true;
+        }
+
+        if (password === '' ) {
             errorObj.password = 'Password is Required';
             error = true;
         }
@@ -33,7 +39,7 @@ function Register(props) {
         if (error) return;
         dispatch(loadingToggleAction(true));
 
-        dispatch(signupAction(email, password, props.history));
+        dispatch(signupAction(name, email, password, props.history));
     }
   return (
     <div className='authincation h-100 p-meddle'>
@@ -64,7 +70,9 @@ function Register(props) {
                                             <label className='mb-1 '>
                                               <strong>Username</strong>
                                             </label>
-                                            <input type='text' className='form-control' placeholder='username'name='name' />
+                                            <input type='text' className='form-control' placeholder='username'name='name' 
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}/>
                                         </div>
                                         <div className='form-group'>
                                             <label className='mb-1 '>
