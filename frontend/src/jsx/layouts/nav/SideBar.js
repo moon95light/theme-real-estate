@@ -72,17 +72,17 @@ class SideBar extends Component {
         "post-details",
         "ecom-product-detail",
       ],
-      email = ["email-compose", "email-inbox", "email-read"],
-      shop = [
-        "ecom-product-grid",
-        "ecom-product-list",
-        "ecom-product-list",
-        "ecom-product-order",
-        "ecom-checkout",
-        "ecom-invoice",
-        "ecom-customers",
-        "ecom-product-detail",
-      ],
+      // email = ["email-compose", "email-inbox", "email-read"],
+      // shop = [
+      //   "ecom-product-grid",
+      //   "ecom-product-list",
+      //   "ecom-product-list",
+      //   "ecom-product-order",
+      //   "ecom-checkout",
+      //   "ecom-invoice",
+      //   "ecom-customers",
+      //   "ecom-product-detail",
+      // ],
       charts = [
         "chart-rechart",
         "chart-flot",
@@ -124,21 +124,21 @@ class SideBar extends Component {
         "todo",
         "form-redux",
         "form-redux-wizard",
-      ],
-      widget = ["widget-basic"],
-      forms = [
-        "form-element",
-        "form-wizard",
-        "form-editor-summernote",
-        "form-pickers",
-        "form-validation-jquery",
-      ],
-      table = [
-        "table-bootstrap-basic",
-        "table-datatable-basic",
-        "table-sorting",
-        "table-filtering",
       ];
+      // widget = ["widget-basic"],
+      // forms = [
+      //   "form-element",
+      //   "form-wizard",
+      //   "form-editor-summernote",
+      //   "form-pickers",
+      //   "form-validation-jquery",
+      // ],
+      // table = [
+      //   "table-bootstrap-basic",
+      //   "table-datatable-basic",
+      //   "table-sorting",
+      //   "table-filtering",
+      // ];
 
     return (
       <div className="deznav">
@@ -397,15 +397,14 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                  <Link className={`${path === "uc-select2" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/">Vendors</Link>
+                  <Link className={`${path === "uc-select2" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-vendors">Vendors</Link>
                 </li>
                 <li>
-                  <Link className={`${path === "uc-nestable" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/">Work Orders</Link>
+                  <Link className={`${path === "uc-nestable" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-workorders">Work Orders</Link>
                 </li>
                 <li>
                   <Link
-                    className={`${path === "uc-noui-slider" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/">
-                    Property Inspections
+                    className={`${path === "uc-noui-slider" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-propertyinsp">Property Inspections
                   </Link>
                 </li>
                 {/* <li>
@@ -440,10 +439,10 @@ class SideBar extends Component {
                 <i className="flaticon-381-book"></i><span className="nav-text">Tasks</span>
               </Link>
               <ul>
-                <li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/an-">Incoming Requests</Link></li>
-                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-">My Tasks</Link></li>
-                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-">All Tasks</Link></li>
-                <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/an-">Recurring Tasks</Link></li>
+                <li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/an-inrequests">Incoming Requests</Link></li>
+                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-mytasks">My Tasks</Link></li>
+                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-alltasks">All Tasks</Link></li>
+                <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/an-rectasks">Recurring Tasks</Link></li>
               </ul>
             </li>
             <li className={`${bootstrap.includes(path) ? "mm-active" : ""}`}>
@@ -453,12 +452,12 @@ class SideBar extends Component {
               </Link>
               <ul >
                 <li>
-                  <Link className={`${path === "ui-accordion" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-">
+                  <Link className={`${path === "ui-accordion" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-emails">
                     Emails
                   </Link>
                 </li>
                 <li>
-                  <Link className={`${path === "ui-alert" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-" >
+                  <Link className={`${path === "ui-alert" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-textmessages" >
                     Text Messages
                   </Link>
                 </li>
@@ -724,7 +723,7 @@ class SideBar extends Component {
               </ul>
             </li> */}
           </MM>
-          {/* <div className="copyright">
+          <div className="copyright">
             <p className="fs-14 font-w200">
               <strong className="font-w400">Omah Dashboard</strong> ©All Rights
               Reserved
@@ -740,7 +739,7 @@ class SideBar extends Component {
               ></span>{" "}
               by DexignZone
             </p>
-          </div> */}
+          </div>
         </PerfectScrollbar>
       </div>
     );

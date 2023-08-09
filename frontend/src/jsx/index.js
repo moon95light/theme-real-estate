@@ -41,8 +41,8 @@ import AnMaintenanceProperty from "./pages/maintenance/Property";
 
 import AnTasksIncomingRequests from "./pages/tasks/IncomingRequests"
 import AnTasksMyTasks from "./pages/tasks/MyTasks";
-import AnAllTasks from "./pages/tasks/AllTasks";
-import AnRecurringTasks from "./pages/tasks/RecurringTasks";
+import AnTasksAllTasks from "./pages/tasks/AllTasks";
+import AnTasksRecurringTasks from "./pages/tasks/RecurringTasks";
 
 import AnCommunicationEmails from "./pages/communication/Emails";
 import AnCommunicationTextMessages from "./pages/communication/TextMessages";
@@ -153,12 +153,40 @@ const Markup = () => {
   const routes = [
     /// Antonio
     {url: "dashboard", component: AnDashboard },
+
     {url: "an-properties", component: AnRentalsProperties },
     {url: "an-rentroll", component: AnRentalsRentRoll },
     {url: "an-tenants", component: AnRentalsTenants },
     {url: "an-rentalowners", component: AnRentalsRentalOwners },
     {url: "an-outstandingbalance", component: AnRentalsOutStandingBalance },
 
+    {url: "an-listings", component: AnLeasingListings },
+    {url: "an-applicants", component: AnLeasingApplicants },
+    {url: "an-draftleases", component: AnLeasingDraftLeases },
+    {url: "an-reaserenewals", component: AnLeasingLeaseRenewals },
+
+    {url: "an-financials", component: AnAccountingFinancials },
+    {url: "an-generalledger", component: AnAccountingGeneralLedger },
+    {url: "an-banking", component: AnAccountingBanking }, 
+    {url: "an-bills", component: AnAccountingBills },
+    {url: "an-recurtrans", component: AnAccountingRecurringTransactions },
+    {url: "an-EFT", component: AnAccountingEFTApprovals },
+    {url: "an-budgets", component: AnAccountingBudgets },
+    {url: "an-chart", component: AnAccountingChart },
+    {url: "an-tax", component: AnAccountingTax },
+    {url: "an-companyfinancials", component: AnAccountingCompanyFinancials },
+    
+    {url: "an-vendors", component: AnMaintenanceVendors },
+    {url: "an-workorders", component: AnMaintenanceWorkOrders },
+    {url: "an-propertyinsp", component: AnMaintenanceProperty },
+
+    {url: "an-inrequests", component: AnTasksIncomingRequests },
+    {url: "an-mytasks", component: AnTasksMyTasks },
+    {url: "an-alltasks", component: AnTasksAllTasks },
+    {url: "an-rectasks", component:  AnTasksRecurringTasks},
+    
+    {url: "an-emails", component: AnCommunicationEmails },
+    {url: "an-textmessages", component: AnCommunicationTextMessages },
 
     /// Dashboard
     { url: "", component: Home },
