@@ -10,6 +10,43 @@ import './step.css'
 import Nav from './layouts/nav'
 import Footer from './layouts/Footer'
 
+/// Antonio Real Estate
+import AnDashboard from "./pages/Dashboard";
+
+import AnRentalsProperties from "./pages/rentals/Properties";
+import AnRentalsRentRoll from "./pages/rentals/RentRoll";
+import AnRentalsTenants from "./pages/rentals/Tenants";
+import AnRentalsRentalOwners from "./pages/rentals/RentalOwners";
+import AnRentalsOutStandingBalance from "./pages/rentals/OutstandingBalance";
+
+import AnLeasingListings from "./pages/leasing/Listings";
+import AnLeasingApplicants from "./pages/leasing/Applicants"; 
+import AnLeasingDraftLeases from "./pages/leasing/DraftLeases";
+import AnLeasingLeaseRenewals from "./pages/leasing/LeaseRenewals";
+
+import AnAccountingFinancials from "./pages/accounting/Financials";
+import AnAccountingGeneralLedger from "./pages/accounting/GeneralLedger";
+import AnAccountingBanking from "./pages/accounting/Banking";
+import AnAccountingBills from "./pages/accounting/Bills";
+import AnAccountingRecurringTransactions from "./pages/accounting/RecurringTransactions";
+import AnAccountingEFTApprovals from "./pages/accounting/EFTApprovals";
+import AnAccountingBudgets from "./pages/accounting/Budgets";
+import AnAccountingChart from "./pages/accounting/Chart";
+import AnAccountingCompanyFinancials from "./pages/accounting/CompanyFinancials";
+import AnAccountingTax from "./pages/accounting/Tax";
+
+import AnMaintenanceVendors from "./pages/maintenance/Vendors";
+import AnMaintenanceWorkOrders from "./pages/maintenance/WorkOrders";
+import AnMaintenanceProperty from "./pages/maintenance/Property";
+
+import AnTasksIncomingRequests from "./pages/tasks/IncomingRequests"
+import AnTasksMyTasks from "./pages/tasks/MyTasks";
+import AnAllTasks from "./pages/tasks/AllTasks";
+import AnRecurringTasks from "./pages/tasks/RecurringTasks";
+
+import AnCommunicationEmails from "./pages/communication/Emails";
+import AnCommunicationTextMessages from "./pages/communication/TextMessages";
+
 /// Dashboard
 import Home from "./components/Dashboard/Home";
 import Analytics from "./components/Dashboard/Analytics";
@@ -114,9 +151,18 @@ const Markup = () => {
   const [activeEvent, setActiveEvent] = useState(!path)
 
   const routes = [
+    /// Antonio
+    {url: "dashboard", component: AnDashboard },
+    {url: "an-properties", component: AnRentalsProperties },
+    {url: "an-rentroll", component: AnRentalsRentRoll },
+    {url: "an-tenants", component: AnRentalsTenants },
+    {url: "an-rentalowners", component: AnRentalsRentalOwners },
+    {url: "an-outstandingbalance", component: AnRentalsOutStandingBalance },
+
+
     /// Dashboard
     { url: "", component: Home },
-    { url: "dashboard", component: Home },
+    // { url: "dashboard", component: Home },
     { url: "analytics", component: Analytics },
     { url: "review", component: Reviews },
     { url: "order-list", component: OrderList },

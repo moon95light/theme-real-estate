@@ -61,7 +61,7 @@ export function loginAction(email, password, history) {
                     dispatch(loginFailedAction(errorMessage));
                 } else {
                     const tokendetail = {
-                        expiresIn: 1000,
+                        expiresIn: 1000000,
                         idToken: response.data.userID
                     }
                     // console.log(tokendetail);
@@ -74,7 +74,7 @@ export function loginAction(email, password, history) {
                     dispatch(loginConfirmedAction(response.data));
                     history.push('/dashboard');
                     window.location.reload();
-                    //history.pushState('/index');
+                    // history.pushState('/index');
                 }
 
             })
