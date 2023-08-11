@@ -1,0 +1,33 @@
+td.listing-rent{
+    border-right: 0px!important;
+
+}
+td.remove-td{
+    border-top: 0px!important;
+    border-left: 0px!important;
+}
+
+th.remove-th{
+    border-left: 0px!important;
+}
+th.remove-listing-rent{
+    border-right: 0px!important;
+}
+
+.listing-listed {
+    color: #4d4dff;
+}
+.listing-listed:hover{
+    color: #33cc33;
+}
+.listing-card-header{
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+.filter-listing{
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+input.form-control-sm{
+    border-color: steelblue;
+}
