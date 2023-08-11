@@ -21,11 +21,6 @@ import '../../../css/properties.css';
 
 import { Link } from "react-router-dom";
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-]
 
 const AnRentalsRentalOwners = () => {
     const svg1 = (
@@ -59,10 +54,42 @@ const AnRentalsRentalOwners = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Rental Owners</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add lease</button>
-                        <button type="button" class="mr-2 btn update-button" id="update-button1">Receive payment</button>
-                        <button type="button" class="mr-2 btn update-button" id="update-button2">Compose Email</button>
-                        <button type="button" class="mr-2 btn update-button" id="update-button2">Resident Center User</button>
+                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add Owner</button>
+                        <DropdownButton
+                            as={ButtonGroup}
+                            id='dropdown-button-drop-down'
+                            drop='down'
+                            variant='primary'
+                            size='sm'
+                            className='mr-2'
+                            title='Management Fees'
+                        >
+                            <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
+                            <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
+                        </DropdownButton>
+                        <DropdownButton
+                            as={ButtonGroup}
+                            id='dropdown-button-drop-down'
+                            drop='down'
+                            variant='primary'
+                            size='sm'
+                            className='mr-2'
+                            title='Owner draw'
+                        >
+                            <Dropdown.Item href='#'>By check</Dropdown.Item>
+                        </DropdownButton>
+                        <DropdownButton
+                            as={ButtonGroup}
+                            id='dropdown-button-drop-down-roll'
+                            drop='down'
+                            variant='primary'
+                            size='sm'
+                            className='dots mr-2'
+                            title='•••'
+                        >
+                            <Dropdown.Item href='#'>Record contribution</Dropdown.Item>
+                            <Dropdown.Item href='#'>Compose email</Dropdown.Item>
+                        </DropdownButton>
                     </div>
                 </div>
                 <Row>
@@ -75,11 +102,6 @@ const AnRentalsRentalOwners = () => {
                                         <option value="">74 Grove Street (Single family home)</option>
                                         <option value="">160 East End Avenue (condo/townhouse)</option>
                                         <option value="">Commercial Industrial</option>
-                                    </select>
-                                    <select className="select-filter2">
-                                        <option value="">Active</option>
-                                        <option value="">Past</option>
-                                        <option value="">Future</option>
                                     </select>
                                 </div>
                                 <Dropdown>
@@ -104,16 +126,16 @@ const AnRentalsRentalOwners = () => {
                                                 <strong>FIRST NAME | LAST NAME</strong>
                                             </th>
                                             <th>
-                                                <strong>UNIT NUMBER</strong>
+                                                <strong>AGREEMENT ENDS ON</strong>
+                                            </th>
+                                            <th>
+                                                <strong>ADDRESS</strong>
                                             </th>
                                             <th>
                                                 <strong>PHONE</strong>
                                             </th>
                                             <th>
                                                 <strong>EMAIL</strong>
-                                            </th>
-                                            <th>
-                                                <strong>RESIDENT CENTER STATUS</strong>
                                             </th>
                                             <th></th>
                                         </tr>
@@ -122,23 +144,54 @@ const AnRentalsRentalOwners = () => {
                                         <tr>
                                             <td>
                                                 <Link to="/">Tony Bobby</Link>
-                                                <br></br>
-                                                <div className="another-events">
-                                                    <div className="number">Tenant</div>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td>150 Main Ave (fourplex) - 4</td>
                                             <td>
-                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
-                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
-                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
                                             </td>
                                             <td>
-                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-fax"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-phone"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="send-opt-msg ml-3">
+                                                    <Link className="text-msg"> &nbsp;Send opt-in text message</Link>
+                                                </div>
                                             </td>
-                                            <td className="resident-status">
-                                                <p className="not-invited">Not invited</p>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
                                             </td>
+
                                             <td>
                                                 <Dropdown>
                                                     <Dropdown.Toggle
@@ -148,9 +201,12 @@ const AnRentalsRentalOwners = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
-                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
-                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
@@ -158,22 +214,47 @@ const AnRentalsRentalOwners = () => {
                                         <tr>
                                             <td>
                                                 <Link to="/">Tony Bobby</Link>
-                                                <br></br>
-                                                <div className="another-events">
-                                                    <div className="number">Tenant</div>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td>150 Main Ave (fourplex) - 4</td>
                                             <td>
-                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
-                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
-                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
                                             </td>
                                             <td>
-                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-phone"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="send-opt-msg ml-3">
+                                                    <Link className="text-msg"> &nbsp;Send opt-in text message</Link>
+                                                </div>
                                             </td>
-                                            <td className="resident-status">
-                                                <p className="not-invited">Not invited</p>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
                                             </td>
                                             <td>
                                                 <Dropdown>
@@ -184,9 +265,12 @@ const AnRentalsRentalOwners = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
-                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
-                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner Draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
@@ -194,23 +278,46 @@ const AnRentalsRentalOwners = () => {
                                         <tr>
                                             <td>
                                                 <Link to="/">Tony Bobby</Link>
-                                                <br></br>
-                                                <div className="another-events">
-                                                    <div className="number">Tenant</div>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td>150 Main Ave (fourplex) - 4</td>
                                             <td>
-                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
-                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
-                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
                                             </td>
                                             <td>
-                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-fax"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+
                                             </td>
-                                            <td className="resident-status">
-                                                <p className="not-invited">Not invited</p>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
                                             </td>
+
                                             <td>
                                                 <Dropdown>
                                                     <Dropdown.Toggle
@@ -220,9 +327,198 @@ const AnRentalsRentalOwners = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
-                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
-                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner Draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <Link to="/">Tony Bobby</Link>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
+                                            </td>
+                                            <td>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-fax"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
+                                            </td>
+
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner Draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <Link to="/">Tony Bobby</Link>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
+                                            </td>
+                                            <td>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-fax"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
+                                            </td>
+
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner Draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <Link to="/">Tony Bobby</Link>
+                                            </td>
+                                            <td>
+                                                <div className="date-td">
+                                                    <div className="date">02/12/2022</div>
+                                                    <div className="days-left-rental-owner ml-2">
+                                                        90 DAYS
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>727 Rue Garneau</div>
+                                                <div>Quebec QC Canada</div>
+                                            </td>
+                                            <td>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-home"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-briefcase"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+                                                <div className="phone-number">
+                                                    <div className="phone-number-icon">
+                                                        <i className="fa fa-fax"></i>
+                                                    </div>
+                                                    <div className="phone-number ml-2"> 550-883-2355</div>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <Link className="email"><i className="ti-email"></i> antiadewew.aere@gmail.com</Link>
+                                                <br></br>
+                                                <Link className="email"><i className="ti-email"></i> mskdfeee.aere@gmail.com</Link>
+                                            </td>
+
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Properties</Dropdown.Item>
+                                                        <Dropdown.Item>Finacials</Dropdown.Item>
+                                                        <Dropdown.Item>Record contribution</Dropdown.Item>
+                                                        <Dropdown.Item>Owner Draw by check</Dropdown.Item>
+                                                        <Dropdown.Item>Rental owner summary</Dropdown.Item>
+                                                        <Dropdown.Item>Send opt-in text message</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
