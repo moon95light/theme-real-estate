@@ -173,3 +173,27 @@ div.page-titles {
 .dropdown-item{
     font-size: 12px!important;
 }
+
+.balance-number{
+    font-size: 12px;
+}
+
+.evition-pending-outstanding{
+    margin-left: 70%;
+    float: right;
+    width: 150px;
+    text-align: center;
+    font-size: 12px;
+    color: #ff0000;
+    background-color: #ffcccc;
+    border-color: #ff0000;
+    border-radius: 15px;
+    border: 1px solid;
+}
+
+.balance-div{
+    text-align: center;
+}
+.thirty-sixty-header{
+    text-align: center;
+}
