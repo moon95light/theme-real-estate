@@ -1,3 +1,7 @@
+/**
+ * @auth antonio
+ * @date 2023.08.11
+ */
 import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
 import { useState, useEffect } from "react";
@@ -7,7 +11,6 @@ import {
     Col,
     Card,
     Table,
-    Badge,
     Dropdown,
     DropdownButton,
     ButtonGroup,
@@ -60,7 +63,6 @@ const AnRentalsRentalOwners = () => {
                         <button type="button" class="mr-2 btn update-button" id="update-button1">Receive payment</button>
                         <button type="button" class="mr-2 btn update-button" id="update-button2">Compose Email</button>
                         <button type="button" class="mr-2 btn update-button" id="update-button2">Resident Center User</button>
-
                     </div>
                 </div>
                 <Row>
