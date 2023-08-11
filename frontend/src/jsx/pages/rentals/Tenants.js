@@ -56,21 +56,11 @@ const AnRentalsTenants = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Tenants</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add property</button>
-                        <DropdownButton
-                            as={ButtonGroup}
-                            id='dropdown-button-drop-down'
-                            drop='down'
-                            variant='primary'
-                            size='sm'
-                            className='mr-2'
-                            title='Management Fees'
-                        >
-                            <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
-                            <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
-                        </DropdownButton>
-                        <button type="button" class="mr-2 btn update-button" id="update-button1">Update Unit Details</button>
-                        <button type="button" class="mr-2 btn update-button" id="update-button2">Property groups</button>
+                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add lease</button>
+                        <button type="button" class="mr-2 btn update-button" id="update-button1">Receive payment</button>
+                        <button type="button" class="mr-2 btn update-button" id="update-button2">Compose Email</button>
+                        <button type="button" class="mr-2 btn update-button" id="update-button2">Resident Center User</button>
+
                     </div>
                 </div>
                 <Row>
@@ -85,45 +75,68 @@ const AnRentalsTenants = () => {
                                         <option value="">Commercial Industrial</option>
                                     </select>
                                     <select className="select-filter2">
-                                        <option value="">All</option>
-                                        <option value="">Status</option>
-                                        <option value="">Location</option>
-                                        <option value="">Prefferd Vendor</option>
-                                        <option value="">Type</option>
+                                        <option value="">Active</option>
+                                        <option value="">Past</option>
+                                        <option value="">Future</option>
                                     </select>
                                 </div>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
+                                        Add filter option
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href='#'>Unit or Tenant</Dropdown.Item>
+                                        <Dropdown.Item href='#'>Type</Dropdown.Item>
+                                        <Dropdown.Item href='#'>Start-end</Dropdown.Item>
+                                        <Dropdown.Item href='#'>Rent</Dropdown.Item>
+                                        <Dropdown.Item href='#'>Days remaning</Dropdown.Item>
+                                        <Dropdown.Item href='#'>most recent event</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </Card.Header>
-                            <Card.Body style={{ paddingTop: '0px' }}>
+                            <Card.Body>
                                 <Table responsive>
                                     <thead>
                                         <tr>
                                             <th>
-                                                <strong>PROPERTY</strong>
+                                                <strong>FIRST NAME | LAST NAME</strong>
                                             </th>
                                             <th>
-                                                <strong>LOCATION</strong>
+                                                <strong>UNIT NUMBER</strong>
                                             </th>
                                             <th>
-                                                <strong>RENTAL OWNERS</strong>
+                                                <strong>PHONE</strong>
                                             </th>
                                             <th>
-                                                <strong>MANAGER</strong>
+                                                <strong>EMAIL</strong>
                                             </th>
                                             <th>
-                                                <strong>TYPE</strong>
+                                                <strong>RESIDENT CENTER STATUS</strong>
                                             </th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><Link to="/">74 Grove Street (Single family home)</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
                                             <td>
-                                                {/* MANAGER */}
+                                                <Link to="/">Tony Bobby</Link>
+                                                <br></br>
+                                                <div className="another-events">
+                                                    <div className="number">Tenant</div>
+                                                </div>
                                             </td>
-                                            <td>Residental Single Family </td>
+                                            <td>150 Main Ave (fourplex) - 4</td>
+                                            <td>
+                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
+                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
+                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
+                                            </td>
+                                            <td>
+                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
+                                            </td>
+                                            <td className="resident-status">
+                                                <p className="not-invited">Not invited</p>
+                                            </td>
                                             <td>
                                                 <Dropdown>
                                                     <Dropdown.Toggle
@@ -133,22 +146,33 @@ const AnRentalsTenants = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
+                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
+                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><Link to="/">74 Grove Street (Single family home)</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
                                             <td>
-                                                {/* MANAGER */}
+                                                <Link to="/">Tony Bobby</Link>
+                                                <br></br>
+                                                <div className="another-events">
+                                                    <div className="number">Tenant</div>
+                                                </div>
                                             </td>
-                                            <td>Residental Multi Family</td>
+                                            <td>150 Main Ave (fourplex) - 4</td>
+                                            <td>
+                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
+                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
+                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
+                                            </td>
+                                            <td>
+                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
+                                            </td>
+                                            <td className="resident-status">
+                                                <p className="not-invited">Not invited</p>
+                                            </td>
                                             <td>
                                                 <Dropdown>
                                                     <Dropdown.Toggle
@@ -158,47 +182,33 @@ const AnRentalsTenants = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
+                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
+                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><Link to="/">160 East End Avenue (condo/townhouse)</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
                                             <td>
-                                                {/* MANAGER */}
+                                                <Link to="/">Tony Bobby</Link>
+                                                <br></br>
+                                                <div className="another-events">
+                                                    <div className="number">Tenant</div>
+                                                </div>
                                             </td>
-                                            <td>Residental Single Family </td>
+                                            <td>150 Main Ave (fourplex) - 4</td>
                                             <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
+                                                <p className="phone-number"><i className="ti-home"></i> 550-883-2355</p>
+                                                <p className="phone-number"><i className="fa fa-archive"></i> 552-669-5585</p>
+                                                <p className="phone-number"><i className="la la-phone"></i> 550-444-2323</p>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td><Link to="/">160 East End Avenue (condo/townhouse)</Link></td>
-                                            <td>NewYork, NY</td>
-                                            <td>Ocean Property LTT</td>
                                             <td>
-                                                {/* MANAGER */}
+                                                <p><i className="ti-email"></i> antiadewew.aere@gmail.com</p>
                                             </td>
-                                            <td>Industrial </td>
+                                            <td className="resident-status">
+                                                <p className="not-invited">Not invited</p>
+                                            </td>
                                             <td>
                                                 <Dropdown>
                                                     <Dropdown.Toggle
@@ -208,90 +218,13 @@ const AnRentalsTenants = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
+                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
+                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><Link to="/">74 Grove Street (Single family home)</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
-                                            <td>
-                                                {/* MANAGER */}
-                                            </td>
-                                            <td>Residental Multi Family </td>
-                                            <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><Link to="/">Commercial Industrial</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
-                                            <td>
-                                                {/* MANAGER */}
-                                            </td>
-                                            <td>160 East End Avenue (condo/townhouse)</td>
-                                            <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><Link to="/">74 Grove Street (Single family home)</Link></td>
-                                            <td>Boston, MA</td>
-                                            <td>Ocean Property LTT</td>
-                                            <td>
-                                                {/* MANAGER */}
-                                            </td>
-                                            <td>Industrial </td>
-                                            <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-                                            </td>
-                                        </tr>
-
                                     </tbody>
                                 </Table>
                             </Card.Body>

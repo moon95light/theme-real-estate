@@ -120,3 +120,17 @@ div.page-titles {
     color: #7e7e7e;
     border-color: #7e7e7e;
 }
+
+.phone-number{
+    margin: 0;
+    font-size: 12px;
+}
+.resident-status{
+    display: inline-flex;
+    text-align: center;
+}
+
+.not-invited{
+    margin-bottom: 8px;
+    margin-top: 8px;
+}

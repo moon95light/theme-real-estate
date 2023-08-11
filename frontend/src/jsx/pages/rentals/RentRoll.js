@@ -153,21 +153,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $9890 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -193,21 +195,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $9890 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -235,21 +239,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $10000 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -277,21 +283,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $9890 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -317,21 +325,24 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $700 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
+
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -357,21 +368,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $12,000 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                         <tr>
@@ -399,21 +412,23 @@ const AnRentalsRentRoll = () => {
                                             <td>
                                                 <div className="rent">
                                                     <Link className="dollars mr-3" to="/"> $10000 </Link>
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle
-                                                            variant="success"
-                                                            className="light sharp i-false"
-                                                        >
-                                                            {svg1}
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                            <Dropdown.Item>Financials</Dropdown.Item>
-                                                            <Dropdown.Item>Units</Dropdown.Item>
-                                                            <Dropdown.Item>Event History</Dropdown.Item>
-                                                            <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                        </Dropdown.Menu>
-                                                    </Dropdown>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <Dropdown>
+                                                    <Dropdown.Toggle
+                                                        variant="success"
+                                                        className="light sharp i-false"
+                                                    >
+                                                        {svg1}
+                                                    </Dropdown.Toggle>
+                                                    <Dropdown.Menu>
+                                                        <Dropdown.Item>Financials</Dropdown.Item>
+                                                        <Dropdown.Item>Units</Dropdown.Item>
+                                                        <Dropdown.Item>Event History</Dropdown.Item>
+                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
                                             </td>
                                         </tr>
                                     </tbody>
