@@ -7,6 +7,7 @@ div.filter-select {
     width: 25%;
     margin-right: 2%;
     padding: 5px;
+    border-radius: 5px;
 }
 
 select.select-filter2 {
