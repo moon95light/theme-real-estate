@@ -159,36 +159,24 @@ const AnLeasingDraftLeases = () => {
                                                 </div>
 
                                             </td>
-                                            <td>Active</td>
                                             <td>
-                                                <p> Fixed w/rollover </p>
-                                                <p className="dates">12/1/2022 - 12/1/2023</p>
-                                            </td>
-                                            <td>
-                                                <div className="days-left">
-                                                    90 DAYS
+                                                <div className="d-flex align-items-center">
+                                                    <i className="fa fa-circle text-canceled mr-1"></i>{" "}
+                                                    No sent
                                                 </div>
                                             </td>
                                             <td>
-                                                <div className="rent">
-                                                    <Link className="dollars mr-3" to="/"> $9890 </Link>
-                                                </div>
+                                                Not executed
                                             </td>
                                             <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
+
+                                            </td>
+                                            <td>
+                                                01/01/2024
+                                            </td>
+
+                                            <td>
+                                                12/14/2025
                                             </td>
                                         </tr>
                                         <tr>
@@ -201,39 +189,56 @@ const AnLeasingDraftLeases = () => {
                                                 </div>
 
                                             </td>
-                                            <td>Past</td>
                                             <td>
-                                                <p> Fixed w/rollover </p>
-                                                <p className="dates">12/1/2022 - 12/1/2023</p>
-                                            </td>
-                                            <td>
-                                                <div className="days-left">
-                                                    90 DAYS
+                                                <div className="d-flex align-items-center">
+                                                    <i className="fa fa-circle text-canceled mr-1"></i>{" "}
+                                                    No sent
                                                 </div>
                                             </td>
                                             <td>
-                                                <div className="rent">
-                                                    <Link className="dollars mr-3" to="/"> $9890 </Link>
-                                                </div>
+                                                Not executed
                                             </td>
                                             <td>
-                                                <Dropdown>
-                                                    <Dropdown.Toggle
-                                                        variant="success"
-                                                        className="light sharp i-false"
-                                                    >
-                                                        {svg1}
-                                                    </Dropdown.Toggle>
-                                                    <Dropdown.Menu>
-                                                        <Dropdown.Item>Financials</Dropdown.Item>
-                                                        <Dropdown.Item>Units</Dropdown.Item>
-                                                        <Dropdown.Item>Event History</Dropdown.Item>
-                                                        <Dropdown.Item>Property Summary</Dropdown.Item>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
+
+                                            </td>
+                                            <td>
+                                                01/01/2024
+                                            </td>
+
+                                            <td>
+                                                12/14/2025
                                             </td>
                                         </tr>
-                                        
+                                        <tr>
+                                            <td>
+                                                <Link to="/">Garden Row (multi-building complex) - 1D | Joanne Evan</Link>
+                                                <br></br>
+                                                <div className="another-events">
+                                                    <div className="number">032493</div>
+
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div className="d-flex align-items-center">
+                                                    <i className="fa fa-circle text-canceled mr-1"></i>{" "}
+                                                    No sent
+                                                </div>
+                                            </td>
+                                            <td>
+                                                Not executed
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                            <td>
+                                                01/01/2024
+                                            </td>
+
+                                            <td>
+                                                12/14/2025
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </Table>
                             </Card.Body>
