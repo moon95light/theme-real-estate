@@ -31,6 +31,10 @@ th.remove-listing-rent{
 input.form-control-sm{
     border-color: steelblue;
 }
-.property-buttons{
+.property-bts{
     margin-left: 75%;
+}
+.property-bts button {
+    border: 1px solid #33cc33;
+    margin-right: 0px;
 }
