@@ -23,7 +23,6 @@ const AnLeasingListings = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            {/* //////////////////////////////////////// */}
                             <div className='input-group col-xl-3'>
                                 <input type='text' className='form-control-sm' />
                                 <Dropdown className='input-group-prepend'>
@@ -33,7 +32,7 @@ const AnLeasingListings = () => {
                                         type='button'
                                         data-toggle='dropdown'
                                     >
-                                        
+
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className='dropdown-menu'>
                                         <Dropdown.Item className='dropdown-item' to='#'>
@@ -55,7 +54,6 @@ const AnLeasingListings = () => {
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
                             </div>
-                            {/* //////////////////////// */}
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
@@ -212,7 +210,7 @@ const AnLeasingListings = () => {
                                         type='button'
                                         data-toggle='dropdown'
                                     >
-                                        
+
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className='dropdown-menu'>
                                         <Dropdown.Item className='dropdown-item' to='#'>
@@ -291,7 +289,9 @@ const AnLeasingListings = () => {
         <Fragment>
             <div className="page-titles">
                 <h4 className="page-title">  Listings</h4>
-
+                <div className="property-bts">
+                    <button type="button" class="mr-2 btn update-button" id="update-button2">Listing settings</button>
+                </div>
             </div>
             <Row>
                 <div className='col-xl-12'>
