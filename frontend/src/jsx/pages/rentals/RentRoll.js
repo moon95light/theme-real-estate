@@ -56,7 +56,7 @@ const AnRentalsRentRoll = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Rent Roll</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>
                         Renew lease
                         </Button>

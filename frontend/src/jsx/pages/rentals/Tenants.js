@@ -57,7 +57,7 @@ const AnRentalsTenants = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Tenants</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>Receive payment</Button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>Commpose Email</Button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>Resident center user</Button>

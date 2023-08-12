@@ -55,7 +55,7 @@ const AnRentalsProperties = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Properties</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
 
                         <DropdownButton
                             as={ButtonGroup}

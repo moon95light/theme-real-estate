@@ -39,7 +39,7 @@ const AnLeasingApplicants = () => {
             <div className="page-titles">
                 <h4 className="page-title">Applicants</h4>
                 <div className="property-buttons">
-                    <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
+                    <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
                     <Button className='mr-2 btn-xs' variant='outline-info'>Renew lease</Button>
                     <Button className='mr-2 btn-xs' variant='outline-info'>Receive payment</Button>
 
