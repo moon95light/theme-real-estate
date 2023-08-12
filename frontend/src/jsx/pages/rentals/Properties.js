@@ -7,8 +7,7 @@ import {
     Col,
     Card,
     Table,
-    Badge,
-    Dropdown,
+    Button, Dropdown,
     DropdownButton,
     ButtonGroup,
     SplitButton,
@@ -56,43 +55,63 @@ const AnRentalsProperties = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Properties</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add property</button>
+                        <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
+
                         <DropdownButton
                             as={ButtonGroup}
                             id='dropdown-button-drop-down'
                             drop='down'
-                            variant='primary'
-                            size='sm'
-                            className='mr-2'
-                            title='Management Fees'
+                            variant='outline-info'
+                            size='xs'
+                            className='mr-2 outline'
+                            title=' Large button'
                         >
                             <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
                             <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
                         </DropdownButton>
-                        <button type="button" class="mr-2 btn update-button" id="update-button1">Update Unit Details</button>
-                        <button type="button" class="mr-2 btn update-button" id="update-button2">Property groups</button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>
+                            Update unit details
+                        </Button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>
+                            Property groups
+                        </Button>
                     </div>
                 </div>
                 <Row>
                     <Col lg={12}>
                         <Card>
                             <Card.Header>
-                                <div className="filter-select" >
-                                    <select className="select-filter1" >
-                                        <option value="">All rentals</option>
-                                        <option value="">74 Grove Street (Single family home)</option>
-                                        <option value="">160 East End Avenue (condo/townhouse)</option>
-                                        <option value="">Commercial Industrial</option>
-                                    </select>
-                                    <select className="select-filter2">
-                                        <option value="">All</option>
-                                        <option value="">Status</option>
-                                        <option value="">Location</option>
-                                        <option value="">Prefferd Vendor</option>
-                                        <option value="">Type</option>
-                                    </select>
-                                </div>
-                            </Card.Header>
+                                <SplitButton
+                                    as={ButtonGroup}
+                                    id='dropdown-button-drop-down'
+                                    drop='down'
+                                    variant='outline-primary'
+                                    size='sm'
+                                    title=' All rentals'
+                                    className='mt-1 mr-1'
+                                >
+                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
+                                    <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
+                                    <div className='dropdown-divider'></div>
+                                    <Dropdown.Item href='#'>Separated link</Dropdown.Item>
+                                </SplitButton>
+                                <DropdownButton
+                                    as={ButtonGroup}
+                                    id='dropdown-button-drop-down'
+                                    drop='down'
+                                    variant=''
+                                    size='sm'
+                                    className='mr-2'
+                                    title=' All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                                >
+                                    <Dropdown.Item href='#'>All</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Status</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Location</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Prefferd Vendor</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Type</Dropdown.Item>
+                                </DropdownButton>
+                             </Card.Header>
                             <Card.Body style={{ paddingTop: '0px' }}>
                                 <Table responsive>
                                     <thead>

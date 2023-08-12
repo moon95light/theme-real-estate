@@ -37,7 +37,7 @@ const AnLeasingApplicants = () => {
                 <h4 className="page-title">Applicants</h4>
                 <div className="property-buttons">
                     <button type="button" class="mr-2 btn btn-success" id="btn-success">Add lease</button>
-                    <Button className='mr-2 btn-xs' variant='outline-success'>
+                    <Button className='mr-2 btn-xs' variant='outline-info'>
                         Success
                     </Button>
                     <button type="button" class="mr-2 btn update-button" id="update-button1">Renew lease</button>
