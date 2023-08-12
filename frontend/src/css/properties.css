@@ -127,6 +127,10 @@ div.page-titles {
     font-size: 12px;
     display: flex;
 }
+.phone-number > i{
+    margin-top:4px;
+    margin-right: 5px;;
+}
 .resident-status{
     display: inline-flex;
     text-align: center;
@@ -151,10 +155,7 @@ div.page-titles {
     border: 1px solid;   
 }
 
-.phone-number-icon {
-    width: 5%;
-    height: 3%;
-}
+
 .send-opt-msg{
     font-size: 11px;
 }
