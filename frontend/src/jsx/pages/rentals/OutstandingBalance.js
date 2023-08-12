@@ -9,14 +9,12 @@ import {
     Badge,
     Dropdown,
     ProgressBar,
+    SplitButton,
     DropdownButton,
     ButtonGroup,
 } from "react-bootstrap";
 
 /// imge
-import avatar1 from "../../../images/avatar/1.jpg";
-import avatar2 from "../../../images/avatar/2.jpg";
-import avatar3 from "../../../images/avatar/3.jpg";
 import { Link } from "react-router-dom";
 
 const AnRentalsOutStandingBalance = () => {
@@ -74,19 +72,34 @@ const AnRentalsOutStandingBalance = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header>
-                            <div className="filter-select" >
-                                <select className="select-filter1" >
-                                    <option value="">All rentals</option>
-                                    <option value="">74 Grove Street (Single family home)</option>
-                                    <option value="">160 East End Avenue (condo/townhouse)</option>
-                                    <option value="">Commercial Industrial</option>
-                                </select>
-                                <select className="select-filter2">
-                                    <option value="">Active</option>
-                                    <option value="">Past</option>
-                                    <option value="">Future</option>
-                                </select>
-                            </div>
+                            <SplitButton
+                                as={ButtonGroup}
+                                id='dropdown-button-drop-down'
+                                drop='down'
+                                variant='outline-primary'
+                                size='sm'
+                                title=' All rentals'
+                                className='mt-1'
+                            >
+                                <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
+                                <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
+                                <div className='dropdown-divider'></div>
+                                <Dropdown.Item href='#'>Separated link</Dropdown.Item>
+                            </SplitButton>
+                            <DropdownButton
+                                as={ButtonGroup}
+                                id='dropdown-button-drop-down'
+                                drop='down'
+                                variant='primary'
+                                size='sm'
+                                className='mt-1 mr-2'
+                                title=' All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                            >
+                                <Dropdown.Item href='#'>Active</Dropdown.Item>
+                                <Dropdown.Item href='#'>Past</Dropdown.Item>
+                                <Dropdown.Item href='#'>Future</Dropdown.Item>
+                            </DropdownButton>
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option

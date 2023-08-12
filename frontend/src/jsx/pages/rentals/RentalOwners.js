@@ -54,26 +54,27 @@ const AnRentalsRentalOwners = () => {
                 <div className="page-titles">
                     <h4 className="page-title">Rental Owners</h4>
                     <div className="property-buttons">
-                        <button type="button" class="mr-2 btn btn-success" id="btn-success">Add Owner</button>
+                        <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
                         <DropdownButton
                             as={ButtonGroup}
                             id='dropdown-button-drop-down'
                             drop='down'
-                            variant='primary'
-                            size='sm'
-                            className='mr-2'
-                            title='Management Fees'
+                            variant='outline-info'
+                            size='xs'
+                            className='mr-2 outline'
+                            title='Management fees'
                         >
                             <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
                             <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
                         </DropdownButton>
+
                         <DropdownButton
                             as={ButtonGroup}
                             id='dropdown-button-drop-down'
                             drop='down'
-                            variant='primary'
-                            size='sm'
-                            className='mr-2'
+                            variant='outline-info'
+                            size='xs'
+                            className='mr-2 outline'
                             title='Owner draw'
                         >
                             <Dropdown.Item href='#'>By check</Dropdown.Item>
@@ -82,13 +83,15 @@ const AnRentalsRentalOwners = () => {
                             as={ButtonGroup}
                             id='dropdown-button-drop-down-roll'
                             drop='down'
-                            variant='primary'
-                            size='sm'
+                            variant='outline-info'
+                            size='xs'
                             className='dots mr-2'
                             title='•••'
                         >
-                            <Dropdown.Item href='#'>Record contribution</Dropdown.Item>
-                            <Dropdown.Item href='#'>Compose email</Dropdown.Item>
+                            <Dropdown.Item href='#'>Update recurring charges</Dropdown.Item>
+                            <Dropdown.Item href='#'>Add meter reading</Dropdown.Item>
+                            <Dropdown.Item href='#'>Enter bulk charges</Dropdown.Item>
+                            <Dropdown.Item href='#'>Enter bulk Credits</Dropdown.Item>
                         </DropdownButton>
                     </div>
                 </div>
@@ -96,14 +99,21 @@ const AnRentalsRentalOwners = () => {
                     <Col lg={12}>
                         <Card>
                             <Card.Header>
-                                <div className="filter-select" >
-                                    <select className="select-filter1" >
-                                        <option value="">All rentals</option>
-                                        <option value="">74 Grove Street (Single family home)</option>
-                                        <option value="">160 East End Avenue (condo/townhouse)</option>
-                                        <option value="">Commercial Industrial</option>
-                                    </select>
-                                </div>
+                                <SplitButton
+                                    as={ButtonGroup}
+                                    id='dropdown-button-drop-down'
+                                    drop='down'
+                                    variant='outline-primary'
+                                    size='sm'
+                                    title=' All rentals'
+                                    className='mt-1 mr-1'
+                                >
+                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
+                                    <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
+                                    <div className='dropdown-divider'></div>
+                                    <Dropdown.Item href='#'>Separated link</Dropdown.Item>
+                                </SplitButton>
                                 <Dropdown>
                                     <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                         Add filter option

@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import PageTitle from '../../layouts/PageTitle'
-import { Row, Col, Table, Card, Tab, Nav, Badge, Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap'
+import {
+    Row, Col, Table, Card, Tab, Nav, Badge, Button,
+    SplitButton, Dropdown, DropdownButton, ButtonGroup
+} from 'react-bootstrap'
 import '../../../css/leasing.css';
 
 const AnLeasingListings = () => {
@@ -23,7 +26,7 @@ const AnLeasingListings = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            <div className='input-group col-xl-3'>
+                            {/* <div className='input-group col-xl-3'>
                                 <input type='text' className='form-control-sm' />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
@@ -53,7 +56,34 @@ const AnLeasingListings = () => {
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
+                            </div> */}
+
+                            <div className='input-group-prepend'>
+                                <SplitButton
+                                    className='input-group-prepend'
+                                    as={ButtonGroup}
+                                    variant=''
+                                    id='dropdown-button-drop-dwon'
+                                    drop='down'
+                                    
+                                >
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Action
+                                    </Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Another action
+                                    </Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Something else here
+                                    </Dropdown.Item>
+                                    <div role='separator' className='dropdown-divider'></div>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Separated link
+                                    </Dropdown.Item>
+                                </SplitButton>
+                                <input type='text' className='form-control' />
                             </div>
+
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
@@ -200,8 +230,7 @@ const AnLeasingListings = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            {/* //////////////////////////////////////// */}
-                            <div className='input-group col-xl-3'>
+                            {/* <div className='input-group col-xl-3'>
                                 <input type='text' className='form-control-sm' placeholder='All rentals' />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
@@ -231,8 +260,32 @@ const AnLeasingListings = () => {
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
+                            </div> */}
+                             <div className='input-group-prepend'>
+                                <SplitButton
+                                    className='input-group-prepend'
+                                    as={ButtonGroup}
+                                    variant=''
+                                    id='dropdown-button-drop-dwon'
+                                    drop='down'
+                                >
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Action
+                                    </Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Another action
+                                    </Dropdown.Item>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Something else here
+                                    </Dropdown.Item>
+                                    <div role='separator' className='dropdown-divider'></div>
+                                    <Dropdown.Item className='dropdown-item' to='#'>
+                                        Separated link
+                                    </Dropdown.Item>
+                                </SplitButton>
+                                <input type='text' className='form-control' />
                             </div>
-                            {/* //////////////////////// */}
+
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
@@ -289,8 +342,8 @@ const AnLeasingListings = () => {
         <Fragment>
             <div className="page-titles">
                 <h4 className="page-title">  Listings</h4>
-                <div className="property-bts">
-                    <button type="button" class="mr-2 btn update-button" id="update-button2">Listing settings</button>
+                <div className="property-buttons">
+                <Button className='ml- btn-xs' variant='outline-info'>Update unit details</Button>
                 </div>
             </div>
             <Row>
@@ -327,7 +380,6 @@ const AnLeasingListings = () => {
                 </div>
             </Row>
         </Fragment>
-
     )
 }
 

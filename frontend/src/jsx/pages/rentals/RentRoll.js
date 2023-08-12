@@ -67,7 +67,7 @@ const AnRentalsRentRoll = () => {
                             as={ButtonGroup}
                             id='dropdown-button-drop-down-roll'
                             drop='down'
-                            variant='primary'
+                            variant='outline-info'
                             size='xs'
                             className='dots mr-2'
                             title='•••'

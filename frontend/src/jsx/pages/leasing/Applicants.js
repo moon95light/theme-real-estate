@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
-import { Dropdown, ProgressBar, ButtonGroup, Button, DropdownButton, } from "react-bootstrap";
+import { Dropdown, ProgressBar, ButtonGroup, Button, 
+    Card,
+    SplitButton,
+    DropdownButton, } from "react-bootstrap";
 import '../../../css/applicant.css';
 
 /// images
@@ -36,18 +39,16 @@ const AnLeasingApplicants = () => {
             <div className="page-titles">
                 <h4 className="page-title">Applicants</h4>
                 <div className="property-buttons">
-                    <button type="button" class="mr-2 btn btn-success" id="btn-success">Add lease</button>
-                    <Button className='mr-2 btn-xs' variant='outline-info'>
-                        Success
-                    </Button>
-                    <button type="button" class="mr-2 btn update-button" id="update-button1">Renew lease</button>
-                    <button type="button" class="mr-2 btn update-button" id="update-button2">Receive payment</button>
+                    <button type="button" class="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
+                    <Button className='mr-2 btn-xs' variant='outline-info'>Renew lease</Button>
+                    <Button className='mr-2 btn-xs' variant='outline-info'>Receive payment</Button>
+
                     <DropdownButton
                         as={ButtonGroup}
                         id='dropdown-button-drop-down-roll'
                         drop='down'
-                        variant='primary'
-                        size='sm'
+                        variant='outline-info'
+                        size='xs'
                         className='dots mr-2'
                         title='•••'
                     >
@@ -61,6 +62,49 @@ const AnLeasingApplicants = () => {
             <div className="row">
                 <div className="col-lg-12">
                     <div className="card">
+                        <Card.Header>
+                            <SplitButton
+                                as={ButtonGroup}
+                                id='dropdown-button-drop-down'
+                                drop='down'
+                                variant='outline-primary'
+                                size='sm'
+                                title=' All rentals'
+                                className='mt-1'
+                            >
+                                <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
+                                <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
+                                <div className='dropdown-divider'></div>
+                                <Dropdown.Item href='#'>Separated link</Dropdown.Item>
+                            </SplitButton>
+                            <DropdownButton
+                                as={ButtonGroup}
+                                id='dropdown-button-drop-down'
+                                drop='down'
+                                variant='primary'
+                                size='sm'
+                                className='mt-1 mr-2'
+                                title=' All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                            >
+                                <Dropdown.Item href='#'>Active</Dropdown.Item>
+                                <Dropdown.Item href='#'>Past</Dropdown.Item>
+                                <Dropdown.Item href='#'>Future</Dropdown.Item>
+                            </DropdownButton>
+                            <Dropdown>
+                                <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
+                                    Add filter option
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href='#'>Unit or Tenant</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Type</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Start-end</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Rent</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Days remaning</Dropdown.Item>
+                                    <Dropdown.Item href='#'>most recent event</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </Card.Header>
                         <div className="card-body">
                             <div className="table-responsive">
                                 <table className="table mb-0 table-striped respon-table-data">

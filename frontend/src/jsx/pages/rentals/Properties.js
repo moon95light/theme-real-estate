@@ -64,7 +64,7 @@ const AnRentalsProperties = () => {
                             variant='outline-info'
                             size='xs'
                             className='mr-2 outline'
-                            title=' Large button'
+                            title=' Managemnet fees'
                         >
                             <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
                             <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
