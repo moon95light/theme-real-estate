@@ -26,12 +26,12 @@ const AnLeasingListings = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            {/* <div className='input-group col-xl-3'>
-                                <input type='text' className='form-control-sm' />
+                            <div className='input-group col-sm-2 input-group-sm'>
+                                <input type='text' className='form-control' placeholder='All rentals' />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
-                                        className='btn btn-primary dropdown-toggle filter-listing'
+                                        className='btn btn-outline dropdown-toggle'
                                         type='button'
                                         data-toggle='dropdown'
                                     >
@@ -56,34 +56,7 @@ const AnLeasingListings = () => {
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
-                            </div> */}
-
-                            <div className='input-group-prepend'>
-                                <SplitButton
-                                    className='input-group-prepend'
-                                    as={ButtonGroup}
-                                    variant=''
-                                    id='dropdown-button-drop-dwon'
-                                    drop='down'
-                                    
-                                >
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Action
-                                    </Dropdown.Item>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Another action
-                                    </Dropdown.Item>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Something else here
-                                    </Dropdown.Item>
-                                    <div role='separator' className='dropdown-divider'></div>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Separated link
-                                    </Dropdown.Item>
-                                </SplitButton>
-                                <input type='text' className='form-control' />
                             </div>
-
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
@@ -230,12 +203,12 @@ const AnLeasingListings = () => {
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            {/* <div className='input-group col-xl-3'>
-                                <input type='text' className='form-control-sm' placeholder='All rentals' />
+                            <div className='input-group col-sm-2 input-group-sm'>
+                                <input type='text' className='form-control' placeholder='All rentals' />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
-                                        className='btn btn-primary dropdown-toggle filter-listing'
+                                        className='btn btn-outline dropdown-toggle'
                                         type='button'
                                         data-toggle='dropdown'
                                     >
@@ -260,32 +233,7 @@ const AnLeasingListings = () => {
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
-                            </div> */}
-                             <div className='input-group-prepend'>
-                                <SplitButton
-                                    className='input-group-prepend'
-                                    as={ButtonGroup}
-                                    variant=''
-                                    id='dropdown-button-drop-dwon'
-                                    drop='down'
-                                >
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Action
-                                    </Dropdown.Item>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Another action
-                                    </Dropdown.Item>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Something else here
-                                    </Dropdown.Item>
-                                    <div role='separator' className='dropdown-divider'></div>
-                                    <Dropdown.Item className='dropdown-item' to='#'>
-                                        Separated link
-                                    </Dropdown.Item>
-                                </SplitButton>
-                                <input type='text' className='form-control' />
                             </div>
-
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
@@ -343,7 +291,7 @@ const AnLeasingListings = () => {
             <div className="page-titles">
                 <h4 className="page-title">  Listings</h4>
                 <div className="property-buttons">
-                <Button className='ml- btn-xs' variant='outline-info'>Update unit details</Button>
+                    <Button className='ml- btn-xs' variant='outline-info'>Update unit details</Button>
                 </div>
             </div>
             <Row>
