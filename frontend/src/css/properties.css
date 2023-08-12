@@ -28,17 +28,6 @@ div.page-titles {
     margin-left: 30%;
 }
 
-.property-buttons>button {
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 10px;
-    background-color: white;
-    color: #7e7e7e;
-    font-size: 12px;
-    border-color: #7e7e7e;
-}
-
 #update-button1:hover,
 #dropdown-button-drop-down:hover, #dropdown-button-drop-down-roll:hover,
 #update-button2:hover {

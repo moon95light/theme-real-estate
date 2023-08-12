@@ -1,0 +1,9 @@
+.send-opt-msg{
+    font-size: 11px;
+}
+.send-opt-msg a{
+    color: #3399ff;
+}
+.send-opt-msg a:hover{
+    text-decoration: underline;
+}

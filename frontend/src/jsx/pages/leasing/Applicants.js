@@ -1,7 +1,7 @@
-
 import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
-import { Dropdown, ProgressBar } from "react-bootstrap";
+import { Dropdown, ProgressBar, ButtonGroup, Button, DropdownButton, } from "react-bootstrap";
+import '../../../css/applicant.css';
 
 /// images
 import { Link } from "react-router-dom";
@@ -22,17 +22,42 @@ const AnLeasingApplicants = () => {
                 </span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item href="#">Edit</Dropdown.Item>
-                <Dropdown.Item href="#" className="text-danger">
-                    Delete
-                </Dropdown.Item>
+                <Dropdown.Item href="#">Applicant summary</Dropdown.Item>
+                <Dropdown.Item href="#">View application</Dropdown.Item>
+                <Dropdown.Item href="#">Run credit check</Dropdown.Item>
+                <Dropdown.Item href="#">Add lease</Dropdown.Item>
+                <Dropdown.Item href="#">Send opt-in text message</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
 
     return (
         <Fragment>
-            <PageTitle activeMenu="Shop" motherMenu="Customers" />
+            <div className="page-titles">
+                <h4 className="page-title">Applicants</h4>
+                <div className="property-buttons">
+                    <button type="button" class="mr-2 btn btn-success" id="btn-success">Add lease</button>
+                    <Button className='mr-2 btn-xs' variant='outline-success'>
+                        Success
+                    </Button>
+                    <button type="button" class="mr-2 btn update-button" id="update-button1">Renew lease</button>
+                    <button type="button" class="mr-2 btn update-button" id="update-button2">Receive payment</button>
+                    <DropdownButton
+                        as={ButtonGroup}
+                        id='dropdown-button-drop-down-roll'
+                        drop='down'
+                        variant='primary'
+                        size='sm'
+                        className='dots mr-2'
+                        title='•••'
+                    >
+                        <Dropdown.Item href='#'>Update recurring charges</Dropdown.Item>
+                        <Dropdown.Item href='#'>Add meter reading</Dropdown.Item>
+                        <Dropdown.Item href='#'>Enter bulk charges</Dropdown.Item>
+                        <Dropdown.Item href='#'>Enter bulk Credits</Dropdown.Item>
+                    </DropdownButton>
+                </div>
+            </div>
             <div className="row">
                 <div className="col-lg-12">
                     <div className="card">
@@ -68,34 +93,63 @@ const AnLeasingApplicants = () => {
                                             <td>Garden Row (muliti
                                                 <br></br>building complex)-2c
                                             </td>
-                                            <td className="py-2" style={{ display: "flex", marginTop: 16 }}>
-                                                <div className="mr-4" style={{ paddingTop: 1 }}>
-                                                    <i className="ti-email"></i></div>
-                                                <div>
-                                                    <a href="mailto:ricky@example.com">
-                                                        info@example.com
-                                                    </a>
-                                                </div>
+                                            <td className="py-2">
+                                                <i className="ti-email mr-2"></i>info@example.com
                                             </td>
                                             <td className="py-2">
                                                 <div>
                                                     <i className="fa fa-phone mr-2"></i>
                                                     <a href="tel:2012001851">(201) 200-1851</a>
                                                 </div>
-                                                <div className="">
-                                                    <a>Send opt-in text message </a>
+                                                <div className="send-opt-msg">
+                                                    <a href="/">Send opt-in text message </a>
                                                 </div>
                                             </td>
                                             <td className="py-2 pl-5 wspace-no">
-                                                2392 Main Avenue, Penasauka
+                                                Approved
                                             </td>
-                                            <td className="py-2">30/03/2018</td>
+                                            <td className="py-2">30/03/2018 3:59 AM</td>
                                             <td>
                                                 <ProgressBar now={70} variant="success" />
                                             </td>
                                             <td className="py-2 text-right">{drop}</td>
                                         </tr>
-
+                                        <tr className="btn-reveal-trigger">
+                                            <td className="py-3">
+                                                <Link to="/ecom-customers">
+                                                    <div className="media d-flex align-items-center">
+                                                        <div className="media-body">
+                                                            <h5 className="mb-0 fs--1">
+                                                                Ricky Antony
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </Link>
+                                            </td>
+                                            <td>Garden Row (muliti
+                                                <br></br>building complex)-2c
+                                            </td>
+                                            <td className="py-2">
+                                                <i className="ti-email mr-2"></i>info@example.com
+                                            </td>
+                                            <td className="py-2">
+                                                <div>
+                                                    <i className="fa fa-phone mr-2"></i>
+                                                    <a href="tel:2012001851">(201) 200-1851</a>
+                                                </div>
+                                                <div className="send-opt-msg">
+                                                    <a href="/">Send opt-in text message </a>
+                                                </div>
+                                            </td>
+                                            <td className="py-2 pl-5 wspace-no">
+                                                Approved
+                                            </td>
+                                            <td className="py-2">30/03/2018 3:59 AM</td>
+                                            <td>
+                                                <ProgressBar now={70} variant="success" />
+                                            </td>
+                                            <td className="py-2 text-right">{drop}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
