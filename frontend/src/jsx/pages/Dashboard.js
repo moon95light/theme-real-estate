@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
-
+import { useTranslation } from 'react-i18next';
 // Map
 import World from "@svg-maps/world";
 import { SVGMap } from "react-svg-map";
@@ -29,12 +29,13 @@ const ChartBar = loadable(() =>
 );
 
 function Home() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="form-head d-md-flex mb-sm-4 mb-3 align-items-start">
         <div className="mr-auto  d-lg-block">
-          <h2 className="text-black font-w600">Good Morning, Thommie!</h2>
-          <p className="mb-0">Welcome to Real Estate Owner</p>
+          <h2 className="text-black font-w600">{t('goodmorning')}, Thommie!</h2>
+          <p className="mb-0">{t('welcometorealestateowner')}</p>
         </div>
         {/* <Link to="/" className="btn btn-primary rounded light mr-3">
           Refresh
@@ -73,18 +74,18 @@ function Home() {
                       </svg>
                     </span>
                     <div className="media-body mb-sm-0 mb-3 mr-5">
-                      <h4 className="fs-22 text-white">Total Properties</h4>
+                      <h4 className="fs-22 text-white">{t('totalpropertise')}</h4>
                       <div className="progress mt-3 mb-2" style={{ height: 8 }}>
                         <div
                           className="progress-bar bg-white progress-animated"
                           style={{ width: "86%", height: 8 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">86% Complete</span>
+                          <span className="sr-only">86% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <span className="fs-14">
-                        431 more to break last month record
+                        431 {t('moretobreaklastmonth')}
                       </span>
                     </div>
                     <span className="fs-46 font-w500">4,562</span>
@@ -99,9 +100,9 @@ function Home() {
                     <div className="media-body mr-3">
                       <h2 className="fs-36 text-black font-w600">2,356</h2>
                       <p className="fs-18 mb-0 text-black font-w500">
-                        Properties for Sale
+                      {t('propertiseforsale')}
                       </p>
-                      <span className="fs-13">Target 3k/month</span>
+                      <span className="fs-13">{t('btarget')} 3k/{t('month')}</span>
                     </div>
                     <div className="d-inline-block position-relative donut-chart-sale">
                       <ChartDoughnut value={71} backgroundColor="#3C4CB8" />
@@ -119,9 +120,9 @@ function Home() {
                     <div className="media-body mr-3">
                       <h2 className="fs-36 text-black font-w600">2,206</h2>
                       <p className="fs-18 mb-0 text-black font-w500">
-                        Properties for Rent
+                      {t('propertiseforrent')}
                       </p>
-                      <span className="fs-13">Target 3k/month</span>
+                      <span className="fs-13">{t('btarget')} 3k/{t('month')}</span>
                     </div>
                     <div className="d-inline-block position-relative donut-chart-sale">
                       <ChartDoughnut value={90} backgroundColor="#37D15A" />
@@ -138,7 +139,7 @@ function Home() {
         <div className="col-xl-6 col-xxl-12">
           <div className="card">
             <div className="card-header border-0 pb-0">
-              <h3 className="fs-20 text-black">Total Revenue</h3>
+              <h3 className="fs-20 text-black">{t('btotalrevenue')}</h3>
               <Dropdown className="dropdown ml-auto">
                 <Dropdown.Toggle
                   className="btn-link   i-false p-0"
@@ -166,10 +167,10 @@ function Home() {
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
                   <Dropdown.Item className="dropdown-item" to="/">
-                    Edit
+                  {t('bedit')}
                   </Dropdown.Item>
                   <Dropdown.Item className="dropdown-item" to="/">
-                    Delete
+                  {t('bdelete')}
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
@@ -180,7 +181,7 @@ function Home() {
                   $678,345
                 </span>
                 <p className="mr-sm-auto mr-3 mb-sm-0 mb-3">
-                  last month $563,443
+                {t('lastmonth')} $563,443
                 </p>
                 <div className="d-flex align-items-center">
                   <svg
@@ -236,7 +237,7 @@ function Home() {
             <div className="col-xl-8 col-xxl-12">
               <div className="card">
                 <div className="card-header border-0 pb-0">
-                  <h3 className="fs-20 text-black">Overview</h3>
+                  <h3 className="fs-20 text-black">{t('boverview')}</h3>
                   <Dropdown className="dropdown ml-auto">
                     <Dropdown.Toggle
                       variant=""
@@ -264,10 +265,10 @@ function Home() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Edit
+                      {t('bedit')}
                       </Dropdown.Item>
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Delete
+                      {t('bdelete')}
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -298,9 +299,9 @@ function Home() {
                         </svg>
                       </span>
                       <div>
-                        <p className="fs-14 mb-1">Total Sale</p>
+                        <p className="fs-14 mb-1">{t('totalsale')}</p>
                         <span className="fs-18 text-black font-w700">
-                          2,346 Unit
+                          2,346 {t('bunit')}
                         </span>
                       </div>
                     </div>
@@ -328,9 +329,9 @@ function Home() {
                         </svg>
                       </span>
                       <div>
-                        <p className="fs-14 mb-1">Total Rent</p>
+                        <p className="fs-14 mb-1">{t('totalrent')}</p>
                         <span className="fs-18 text-black font-w700">
-                          1,252 Unit
+                          1,252 {t('bunit')}
                         </span>
                       </div>
                     </div>
@@ -365,7 +366,7 @@ function Home() {
                               fill="#FFB067"
                             />
                           </svg>
-                          Agent
+                          {t('bagent')}
                         </span>
                         <span className="text-black font-w600 mb-2">
                           <svg
@@ -383,7 +384,7 @@ function Home() {
                               fill="#B655E4"
                             />
                           </svg>
-                          Customers
+                          {t('bcustomers')}
                         </span>
                       </div>
                     </div>
@@ -393,9 +394,9 @@ function Home() {
                   <div className="card">
                     <div className="card-body">
                       <p className="mb-2 d-flex  fs-16 text-black font-w500">
-                        Product Viewed
+                      {t('productviewed')}
                         <span className="pull-right ml-auto text-dark fs-14">
-                          561/days
+                          561/{t('days')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -404,13 +405,13 @@ function Home() {
                           style={{ width: "75%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">75% Complete</span>
+                          <span className="sr-only">75% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex  fs-16 text-black font-w500">
-                        Product Listed
+                      {t('productlisted')}
                         <span className="pull-right ml-auto text-dark fs-14">
-                          3,456 Unit
+                          3,456 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-3" style={{ height: 10 }}>
@@ -419,7 +420,7 @@ function Home() {
                           style={{ width: "90%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">90% Complete</span>
+                          <span className="sr-only">90% {t('bcomplete')}</span>
                         </div>
                       </div>
                     </div>
@@ -430,7 +431,7 @@ function Home() {
             <div className="col-xl-12">
               <div className="card">
                 <div className="card-header border-0 pb-0">
-                  <h3 className="fs-20 text-black">Properties Map Location</h3>
+                  <h3 className="fs-20 text-black">{t('propertisemaplocation')}</h3>
                   <Dropdown className="dropdown ml-auto">
                     <Dropdown.Toggle
                       variant=""
@@ -458,10 +459,10 @@ function Home() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Edit
+                      {t('bedit')}
                       </Dropdown.Item>
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Delete
+                      {t('bdelete')}
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -470,9 +471,9 @@ function Home() {
                   <div className="row">
                     <div className="col-lg-3">
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        Europe
+                      {t('beurope')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -481,13 +482,13 @@ function Home() {
                           style={{ width: "75%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">75% Complete</span>
+                          <span className="sr-only">75% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        Asia
+                      {t('basia')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -496,13 +497,13 @@ function Home() {
                           style={{ width: "100%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">100% Complete</span>
+                          <span className="sr-only">100% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        Africa
+                      {t('bafrica')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -511,13 +512,13 @@ function Home() {
                           style={{ width: "75%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">75% Complete</span>
+                          <span className="sr-only">75% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        Australia
+                      {t('baustralia')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -526,13 +527,13 @@ function Home() {
                           style={{ width: "50%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">50% Complete</span>
+                          <span className="sr-only">50% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        America
+                      {t('bamerica')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -541,13 +542,13 @@ function Home() {
                           style={{ width: "70%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">70% Complete</span>
+                          <span className="sr-only">70% {t('bcomplete')}</span>
                         </div>
                       </div>
                       <p className="mb-2 d-flex align-items-center  fs-16 text-black font-w500">
-                        USA
+                      {t('usa')}
                         <span className="pull-right text-dark fs-14 ml-2">
-                          653 Unit
+                          653 {t('bunit')}
                         </span>
                       </p>
                       <div className="progress mb-4" style={{ height: 10 }}>
@@ -556,7 +557,7 @@ function Home() {
                           style={{ width: "40%", height: 10 }}
                           role="progressbar"
                         >
-                          <span className="sr-only">40% Complete</span>
+                          <span className="sr-only">40% {t('bcomplete')}</span>
                         </div>
                       </div>
                     </div>
@@ -577,7 +578,7 @@ function Home() {
             <div className="col-xl-12 col-lg-6">
               <div className="card">
                 <div className="card-header border-0 pb-0">
-                  <h3 className="fs-20 text-black">Customer Review</h3>
+                  <h3 className="fs-20 text-black">{t('customerreview')}</h3>
                   <Dropdown className="dropdown ml-auto">
                     <Dropdown.Toggle
                       variant=""
@@ -605,10 +606,10 @@ function Home() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Edit
+                      {t('bedit')}
                       </Dropdown.Item>
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Delete
+                      {t('bdelete')}
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
@@ -632,12 +633,12 @@ function Home() {
                           <i className="las la-star" />
                         </div>
                       </div>
-                      <span className="fs-14 ml-auto">5m ago</span>
+                      <span className="fs-14 ml-auto">5m {t('ago')}</span>
                     </div>
                     <p className="fs-14 mb-0">
-                      Friendly service Josh, Lunar and everyone at Just Property
-                      in Hastings deserved a big Thank You from us for moving us
-                      from Jakarta to Medan during the lockdown.
+                      {t('friendlyservicesentence')}
+                      {t('inhastingssentence')}
+                      {t('fromjaksrtasentence')}
                     </p>
                   </div>
                   <div className="pb-3 border-bottom mb-3">
@@ -660,12 +661,12 @@ function Home() {
                           <i className="las la-star" />
                         </div>
                       </div>
-                      <span className="fs-14 ml-auto">10h ago</span>
+                      <span className="fs-14 ml-auto">10h {t('ago')}</span>
                     </div>
                     <p className="fs-14 mb-0">
-                      I viewed a number of properties with Just Property and
-                      found them to be professional, efficient, patient,
-                      courteous and helpful every time.
+                    {t('iviewedanumbersentence')}
+                      {t('foundthemsentence')}
+                      {t('courteousandsentence')}
                     </p>
                   </div>
                   <div className="pb-3">
@@ -688,15 +689,15 @@ function Home() {
                           <i className="las la-star" />
                         </div>
                       </div>
-                      <span className="fs-14 ml-auto">2d ago</span>
+                      <span className="fs-14 ml-auto">2d {t('ago')}</span>
                     </div>
                     <p className="fs-14 mb-0">
-                      Dealing with Syamsudin and Bakri was a joy. I got in touch
-                      with Just Property after seeing a couple of properties
-                      that caught my eye. Both Syamsudin and Bakri strive to
-                      deliver a professional service and surpassed my
-                      expectations - they were not only helpful but extremely
-                      approachable and not at all bumptious...
+                    {t('dealingwithsentence')}
+                      {t('withjustpropertysentence')}
+                      {t('thatcaughtsentence')}
+                      {t('deliveraprofessionalsentence')}
+                      {t('expectationstheysentence')}
+                      {t('approachablesentence')}
                     </p>
                   </div>
                 </div>
@@ -705,7 +706,7 @@ function Home() {
                     to="/review"
                     className="btn d-block btn-primary rounded"
                   >
-                    See More Reviews
+                    {t('seemorereviews')}
                   </Link>
                 </div>
               </div>
@@ -713,7 +714,7 @@ function Home() {
             <div className="col-xl-12 col-lg-6">
               <div className="card">
                 <div className="card-header border-0 pb-0">
-                  <h3 className="fs-20 text-black">Recent Property</h3>
+                  <h3 className="fs-20 text-black">{t('recentproperty')}</h3>
                   <Dropdown className="dropdown ml-auto">
                     <Dropdown.Toggle
                       variant=""
@@ -741,10 +742,10 @@ function Home() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropdown-menu dropdown-menu-right">
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Edit
+                        {t('bedit')}
                       </Dropdown.Item>
                       <Dropdown.Item className="dropdown-item" to="/">
-                        Delete
+                        {t('bdelete')}
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>

@@ -3,12 +3,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 /// Scroll
 import PerfectScrollbar from "react-perfect-scrollbar";
-
+import LanguageSelector from "../../components/Translate";
 /// Image
 import profile from "../../../images/profile/17.jpg";
 import avatar from "../../../images/avatar/1.jpg";
 import { Dropdown } from "react-bootstrap";
-import Logout from './Logout'; 
+import Logout from './Logout';
 
 const Header = ({ onNote }) => {
   return (
@@ -46,6 +46,7 @@ const Header = ({ onNote }) => {
                       />
                     </svg>
                   </span>
+                  <LanguageSelector />
                 </div>
               </div>
             </div>
@@ -381,7 +382,7 @@ const Header = ({ onNote }) => {
                     </svg>
                     <span className="ml-2">Inbox </span>
                   </Link>
-                 <Logout />
+                  <Logout />
                 </Dropdown.Menu>
               </Dropdown>
             </ul>
