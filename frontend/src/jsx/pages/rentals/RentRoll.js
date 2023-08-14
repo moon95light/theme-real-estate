@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
+
 import Select from 'react-select';
 import {
     Row,
@@ -25,6 +27,7 @@ const options = [
 ]
 
 const AnRentalsRentRoll = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -54,14 +57,14 @@ const AnRentalsRentRoll = () => {
         <>
             <Fragment>
                 <div className="page-titles">
-                    <h4 className="page-title">Rent Roll</h4>
+                    <h4 className="page-title">{t('rentroll')}</h4>
                     <div className="property-buttons">
-                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('lease')}</button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>
-                        Renew lease
+                            {t('Renew')} {t('lease')}
                         </Button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>
-                        Receive payment
+                            {t('Receive')} {t('payment')}
                         </Button>
                         <DropdownButton
                             as={ButtonGroup}
@@ -72,10 +75,10 @@ const AnRentalsRentRoll = () => {
                             className='dots mr-2'
                             title='•••'
                         >
-                            <Dropdown.Item href='#'>Update recurring charges</Dropdown.Item>
-                            <Dropdown.Item href='#'>Add meter reading</Dropdown.Item>
-                            <Dropdown.Item href='#'>Enter bulk charges</Dropdown.Item>
-                            <Dropdown.Item href='#'>Enter bulk Credits</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Update recurring charges')}</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Add meter reading')}</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Enter bulk charges')}</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Enter bulk Credits')}</Dropdown.Item>
                         </DropdownButton>
                     </div>
                 </div>
@@ -92,7 +95,7 @@ const AnRentalsRentRoll = () => {
                                     title=' All rentals'
                                     className='mt-1'
                                 >
-                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
                                     <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                     <div className='dropdown-divider'></div>
@@ -130,19 +133,19 @@ const AnRentalsRentRoll = () => {
                                     <thead>
                                         <tr>
                                             <th>
-                                                <strong>Lease</strong>
+                                                <strong>{t('LEASE')}</strong>
                                             </th>
                                             <th>
-                                                <strong>Status</strong>
+                                                <strong>{t('STATUS')}</strong>
                                             </th>
                                             <th>
-                                                <strong>Type</strong>
+                                                <strong>{t('TYPE')}</strong>
                                             </th>
                                             <th>
-                                                <strong>Days Left</strong>
+                                                <strong>{t('DAYS LEFT')}</strong>
                                             </th>
                                             <th>
-                                                <strong>Rent</strong>
+                                                <strong>{t('RENT')}</strong>
                                             </th>
                                             <th></th>
                                         </tr>

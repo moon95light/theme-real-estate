@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
 import { useState, useEffect } from "react";
 import Select from 'react-select';
+import { useTranslation } from 'react-i18next';
+
 import {
     Row,
     Col,
@@ -24,6 +26,7 @@ const options = [
 ]
 
 const AnRentalsProperties = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -53,9 +56,9 @@ const AnRentalsProperties = () => {
         <>
             <Fragment>
                 <div className="page-titles">
-                    <h4 className="page-title">Properties</h4>
+                    <h4 className="page-title">{t('Properties')}</h4>
                     <div className="property-buttons">
-                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('properties')}</button>
 
                         <DropdownButton
                             as={ButtonGroup}
@@ -66,14 +69,14 @@ const AnRentalsProperties = () => {
                             className='mr-2 outline'
                             title=' Managemnet fees'
                         >
-                            <Dropdown.Item href='#'>Collect Management fees</Dropdown.Item>
-                            <Dropdown.Item href='#'>Pay out income management accounts</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Collect')} {t('Management')} {t('fees')}</Dropdown.Item>
+                            <Dropdown.Item href='#'>{t('Pay')} {t('out')} {t('income')} {t('management')} {t('accounts')}</Dropdown.Item>
                         </DropdownButton>
                         <Button className='mr-2 btn-xs' variant='outline-info'>
-                            Update unit details
+                            {t('Update')} {t('unit')} {t('details')}
                         </Button>
                         <Button className='mr-2 btn-xs' variant='outline-info'>
-                            Property groups
+                            {t('Property')} {t('groups')}
                         </Button>
                     </div>
                 </div>
@@ -90,7 +93,7 @@ const AnRentalsProperties = () => {
                                     title=' All rentals'
                                     className='mt-1 mr-1'
                                 >
-                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
                                     <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                     <div className='dropdown-divider'></div>
@@ -105,7 +108,7 @@ const AnRentalsProperties = () => {
                                     className='mr-2'
                                     title=' All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
                                 >
-                                    <Dropdown.Item href='#'>All</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('All')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>Status</Dropdown.Item>
                                     <Dropdown.Item href='#'>Location</Dropdown.Item>
                                     <Dropdown.Item href='#'>Prefferd Vendor</Dropdown.Item>
@@ -117,19 +120,19 @@ const AnRentalsProperties = () => {
                                     <thead>
                                         <tr>
                                             <th>
-                                                <strong>PROPERTY</strong>
+                                                <strong>{t('PROPERTY')}</strong>
                                             </th>
                                             <th>
-                                                <strong>LOCATION</strong>
+                                                <strong>{t('LOCATION')}</strong>
                                             </th>
                                             <th>
-                                                <strong>RENTAL OWNERS</strong>
+                                                <strong>{t('RENTAL')} {t('OWNERS')}</strong>
                                             </th>
                                             <th>
-                                                <strong>MANAGER</strong>
+                                                <strong>{t('MANAGER')}</strong>
                                             </th>
                                             <th>
-                                                <strong>TYPE</strong>
+                                                <strong>{t('TYPE')}</strong>
                                             </th>
                                             <th></th>
                                         </tr>
