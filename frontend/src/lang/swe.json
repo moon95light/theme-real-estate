@@ -191,11 +191,45 @@
     "Renew lease" : "Förnya hyreskontraktet",
     "Applicants" : "Sökande",
     "COMPLETE" : "KOMPLETT",
-    "LAST UPDATED" : "SENAST UPPDATERAD"
-
-
-
-
-
-
+    "LAST UPDATED" : "SENAST UPPDATERAD",
+    "Draft leases" : "Utkast till hyresavtal",
+    "Manage templates" : "Hantera mallar",
+    "Settings" : "inställningar",
+    "Unknown" : "Okänd",
+    "Not sent" : "Inte skickat",
+    "Processing request" : "Bearbetar begäran",
+    "Awaiting signatures" : "Väntar på underskrifter",
+    "Fully signed" : "Helsignerad",
+    "Request failed" : "Begäran misslyckades",
+    "Unit or Tenant" : "Enhet eller hyresgäst",
+    "Type" : "Typ",
+    "Start-end" : "Start-slut",
+    "Rent" : "Hyra",
+    "Days remaning" : "Dagar kvar",
+    "Most recent event" : "Senaste händelsen",
+    "Add filter option" : "Lägg till filteralternativ",
+    "ESIGNATURE STATUS" : "ESIGNATURSTATUS",
+    "LEASE STATUS" : "UTHYRNINGSSTATUS",
+    "AGENT" : "OMBUD",
+    "START DATE" : "START DATUM",
+    "END DATE" : "SLUTDATUM",
+    "Record intent" : "Rekord avsikt", 
+    "to moveout" : "att flytta ut",
+    "Not started" : "Ej påbörjad",
+    "RENTAL OWNERS" : "UTHYRESÄGARE",
+    "CURRENT TERMS" : "AKTUELLA VILLKOR",
+    "Generate offer" : "Skapa erbjudande",
+    "Update offer status" : "Uppdatera erbjudandestatus",
+    "Offers" : "Erbjudanden",
+    "Generated" : "Genererad",
+    "Declined" : "Tackade nej",
+    "Sent" : "Skickat",
+    "Accepted" : "Accepterad",
+    "Renewals" : "Förnyelser",
+    "TERMS" : "VILLKOR",
+    "Move outs" : "Flytta ut",
+    "NOTICE GIVEN DATE" : "MEDDELANDE DATUM",
+    "MOVE OUT DATE" : "FLYTTA UT DATUM",
+    "COMMENTS" : "KOMMENTARER",
+    "Lease renewals" : "Hyresförlängningar"
 }

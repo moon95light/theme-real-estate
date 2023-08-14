@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import PageTitle from '../../layouts/PageTitle'
+import PageTitle from '../../layouts/PageTitle';
+import { useTranslation } from 'react-i18next';
 import {
     Row, Col, Table, Card, Tab, Nav, Badge, Button,
     SplitButton, Dropdown, DropdownButton, ButtonGroup
@@ -8,6 +9,8 @@ import {
 import '../../../css/leaserenewal.css';
 
 const AnLeasingLeaseRenewals = () => {
+    const { t } = useTranslation();
+
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -46,7 +49,7 @@ const AnLeasingLeaseRenewals = () => {
     const tabData = [
         {
             name: 'Home',
-            title: 'Not started' + ' (' + cnt_notstarted + ')',
+            title: t('Not started') + ' (' + cnt_notstarted+ ')',
             content: (
                 <Col lg={12}>
                     <Card>
@@ -64,13 +67,13 @@ const AnLeasingLeaseRenewals = () => {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu className='dropdown-menu'>
                                         <Dropdown.Item className='dropdown-item' to='#'>
-                                            Action
+                                            {t('Action')}
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
-                                            Another action
+                                            {t('Another action')}
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
-                                            Something else here
+                                            {t('Something else here')}
                                         </Dropdown.Item>
                                         <div
                                             role='separator'
@@ -83,7 +86,10 @@ const AnLeasingLeaseRenewals = () => {
                                 </Dropdown>{' '}
                             </div>
                             <div className='input-group col-sm-2 input-group-sm mb-4 mt-2'>
-                                <input type='text' className='form-control' placeholder='(8) 241+ days, 181-240 days, 1...' />
+                                <input type='text' className='form-control' 
+                                placeholder={'(8) 241+ ' + t('days') +','+ '181-240' + t('days')+','+ '1...'}
+                                />
+                                
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
@@ -97,25 +103,25 @@ const AnLeasingLeaseRenewals = () => {
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
@@ -142,10 +148,10 @@ const AnLeasingLeaseRenewals = () => {
                                                 ></label>
                                             </div>
                                         </th>
-                                        <th>DAYS LEFT</th>
-                                        <th>LEASE</th>
-                                        <th>CURRENT TERMS</th>
-                                        <th>RENTAL OWNERS</th>
+                                        <th>{t('DAYS LEFT')}</th>
+                                        <th>{t('LEASE')}</th>
+                                        <th>{t('CURRENT TERMS')}</th>
+                                        <th>{t('RENTAL OWNERS')}</th>
 
                                         <th className='remove-listing-rent'></th>
                                         <th className='remove-th'></th>
@@ -178,7 +184,7 @@ const AnLeasingLeaseRenewals = () => {
                                         </td>
                                         <td><Link to=''>Patric Moran</Link></td>
                                         <td className='listing-rent'>
-                                            <Button className='btn-xs' variant='outline-success'>Generate offer</Button>
+                                            <Button className='btn-xs' variant='outline-success'>{t('Generate offer')}</Button>
                                         </td>
                                         <td className="remove-td">
                                             <Dropdown>
@@ -189,10 +195,10 @@ const AnLeasingLeaseRenewals = () => {
                                                     {svg1}
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item>Generate offer</Dropdown.Item>
-                                                    <Dropdown.Item>Update offer status</Dropdown.Item>
-                                                    <Dropdown.Item>Renew lease</Dropdown.Item>
-                                                    <Dropdown.Item>Record intent <br></br>to moveout</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Generate offer')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Update offer status')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Renew lease')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Record intent')} <br></br>{t('to moveout')}</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </td>
@@ -207,13 +213,13 @@ const AnLeasingLeaseRenewals = () => {
         },
         {
             name: 'Profile',
-            title: 'Offers' + ' (' + cnt_offers + ')',
+            title: t('Offers') + ' (' + cnt_offers + ')',
             content: (
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
                             <div className='input-group col-sm-2 input-group-sm mb-4 mt-2' style={{ paddingTop: '10px' }}>
-                                <input type='text' className='form-control' placeholder='All rentals' />
+                                <input type='text' className='form-control' placeholder={t('All') + t('rentals')} />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
@@ -257,32 +263,33 @@ const AnLeasingLeaseRenewals = () => {
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">240+ days</label>
+                                                <label className="custom-control-label">240+ {t('days')}</label>
                                             </div>
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>{' '}
                             </div>
                             <div className='input-group col-sm-2 input-group-sm'>
-                                <input type='text' className='form-control' placeholder='(8) 241+ days, 181-240 days, 1...' />
+                                <input type='text' className='form-control' 
+                                placeholder={'(8) 241+' + t('days') +', 181-240' + t('days') +', 1...'} />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
@@ -295,25 +302,25 @@ const AnLeasingLeaseRenewals = () => {
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Generated</label>
+                                                <label className="custom-control-label">{t('Generated')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Declined</label>
+                                                <label className="custom-control-label">{t('Declined')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Sent</label>
+                                                <label className="custom-control-label">{t('Sent')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Accepted</label>
+                                                <label className="custom-control-label">{t('Accepted')}</label>
                                             </div>
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
@@ -343,11 +350,11 @@ const AnLeasingLeaseRenewals = () => {
                                         <th>
                                             <strong>+</strong>
                                         </th>
-                                        <th>DAYS LEFT</th>
-                                        <th>LEASE</th>
-                                        <th>STATUS</th>
-                                        <th>LAST UPDATED</th>
-                                        <th>COMMENTS</th>
+                                        <th>{t('DAYS LEFT')}</th>
+                                        <th>{t('LEASE')}</th>
+                                        <th>{t('STATUS')}</th>
+                                        <th>{t('LAST UPDATED')}</th>
+                                        <th>{t('COMMENTS')}</th>
                                         <th className='remove-listing-rent'></th>
                                         <th className='remove-th'></th>
                                     </tr>
@@ -393,10 +400,10 @@ const AnLeasingLeaseRenewals = () => {
                                                     {svg1}
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item>Generate offer</Dropdown.Item>
-                                                    <Dropdown.Item>Update offer status</Dropdown.Item>
-                                                    <Dropdown.Item>Renew lease</Dropdown.Item>
-                                                    <Dropdown.Item>Record intent <br></br>to moveout</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Generate offer')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Update offer status')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Renew lease')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Record intent')} <br></br>{t('to moveout')}</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </td>
@@ -411,7 +418,7 @@ const AnLeasingLeaseRenewals = () => {
         },
         {
             name: 'Renewals',
-            title: 'Renewals' + ' (' + cnt_renewals + ')',
+            title: t('Renewals') + ' (' + cnt_renewals + ')',
             content: (
                 <Col lg={12}>
                     <Card>
@@ -461,25 +468,25 @@ const AnLeasingLeaseRenewals = () => {
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Unknown</label>
+                                                <label className="custom-control-label">{t('Unknown')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Not sent</label>
+                                                <label className="custom-control-label">{t('Not sent')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Proccessing request</label>
+                                                <label className="custom-control-label">{t('Proccessing request')}</label>
                                             </div>
                                         </Dropdown.Item>
                                         <Dropdown.Item className='dropdown-item' to='#'>
                                             <div className="custom-control">
                                                 <input type="checkbox" className="custom-control-input"></input>
-                                                <label className="custom-control-label">Awaiting signatures</label>
+                                                <label className="custom-control-label">{t('Awaiting signatures')}</label>
                                             </div>
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
@@ -490,11 +497,11 @@ const AnLeasingLeaseRenewals = () => {
                             <Table responsive bordered>
                                 <thead>
                                     <tr>
-                                        <th>DAYS LEFT</th>
-                                        <th>LEASE</th>
-                                        <th>ESIGNATURE STATUS</th>
-                                        <th>TERMS</th>
-                                        <th>COMMENTS</th>
+                                        <th>{t('DAYS LEFT')}</th>
+                                        <th>{t('LEASE')}</th>
+                                        <th>{t('ESIGNATURE STATUS')}</th>
+                                        <th>{t('TERMS')}</th>
+                                        <th>{t('COMMENTS')}</th>
                                         {/* <th className='remove-listing-rent'></th>
                                         <th className='remove-th'></th> */}
                                     </tr>
@@ -513,7 +520,7 @@ const AnLeasingLeaseRenewals = () => {
         },
         {
             name: 'Moveouts',
-            title: 'move outs' + ' (' + cnt_moveouts + ')',
+            title: t('Move outs') + ' (' + cnt_moveouts + ')',
             content: (
                 <Col lg={12}>
                     <Card>
@@ -569,13 +576,13 @@ const AnLeasingLeaseRenewals = () => {
                                                 ></label>
                                             </div>
                                         </th>
-                                        <th>DAYS LEFT</th>
-                                        <th>LEASE</th>
-                                        <th>STATUS</th>
-                                        <th>NOTICE GIVEN DATE</th>
-                                        <th>MOVE OUT DATE</th>
-                                        <th>COMMENTS</th>
-                                        <th>NEXT LEASE</th>
+                                        <th>{t('DAYS LEFT')}</th>
+                                        <th>{t('LEASE')}</th>
+                                        <th>{t('STATUS')}</th>
+                                        <th>{t('NOTICE GIVEN DATE')}</th>
+                                        <th>{t('MOVE OUT DATE')}</th>
+                                        <th>{t('COMMENTS')}</th>
+                                        <th>{t('NEXT LEASE')}</th>
                                         <th className='remove-listing-rent'></th>
                                         <th className='remove-th'></th>
                                     </tr>
@@ -594,7 +601,7 @@ const AnLeasingLeaseRenewals = () => {
     return (
         <Fragment>
             <div className="page-titles">
-                <h4 className="page-title">  Lease renewals</h4>
+                <h4 className="page-title">  {t('Lease renewals')}</h4>
             </div>
             <Row>
                 <div className='col-xl-12'>

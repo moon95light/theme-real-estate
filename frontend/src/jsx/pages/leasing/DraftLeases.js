@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
 import { useState, useEffect } from "react";
 import Select from 'react-select';
+import { useTranslation } from 'react-i18next';
 import {
     Row,
     Col,
@@ -25,6 +26,7 @@ const options = [
 ]
 
 const AnLeasingDraftLeases = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -54,11 +56,11 @@ const AnLeasingDraftLeases = () => {
         <>
             <Fragment>
                 <div className="page-titles">
-                    <h4 className="page-title">Draft leases</h4>
+                    <h4 className="page-title">{t('Draft leases')}</h4>
                     <div className="property-buttons">
-                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
-                        <Button className='mr-2 btn-xs' variant='outline-info'>Manage templates</Button>
-                        <Button className='mr-2 btn-xs' variant='outline-info'>Settings</Button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add lease')}</button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>{t('Manage templates')}</Button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>{t('Settings')}</Button>
                     </div>
                 </div>
                 <Row>
@@ -74,7 +76,7 @@ const AnLeasingDraftLeases = () => {
                                     title=' All rentals'
                                     className='mt-1'
                                 >
-                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
                                     <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                     <div className='dropdown-divider'></div>
@@ -87,14 +89,14 @@ const AnLeasingDraftLeases = () => {
                                     variant='outline-primary'
                                     size='sm'
                                     className='mt-1 mr-2'
-                                    title='(8) Unknown, Not sent,Proc...'
+                                    title= {'(8)' + t('Unknown') + ',' + t('Not sent') + ',' + t('Proc') + '...'}
                                 >
-                                    <Dropdown.Item href='#'>Unknown</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Nost sent</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Processing request</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Awaiting signatures</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Fully signed</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Request failed</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Unknown')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Not sent')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Processing request')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Awaiting signatures')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Fully signed')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Request failed')}</Dropdown.Item>
                                 </DropdownButton>
                                 <DropdownButton
                                     as={ButtonGroup}
@@ -103,26 +105,26 @@ const AnLeasingDraftLeases = () => {
                                     variant='outline-primary'
                                     size='sm'
                                     className='mt-1 mr-2'
-                                    title='(3) Executed, Not executed, ...'
+                                    title={'(8)' + t('Unknown') + ',' + t('Not sent') + ',' + t('Proc') + '...'}
                                 >
-                                    <Dropdown.Item href='#'>Unknown</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Nost sent</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Processing request</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Awaiting signatures</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Fully signed</Dropdown.Item>
-                                    <Dropdown.Item href='#'>Request failed</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Unknown')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Not sent')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Processing request')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Awaiting signatures')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Fully signed')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Request failed')}</Dropdown.Item>
                                 </DropdownButton>
                                 <Dropdown>
                                     <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
-                                        Add filter option
+                                        {t('Add filter option')}
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href='#'>Unit or Tenant</Dropdown.Item>
-                                        <Dropdown.Item href='#'>Type</Dropdown.Item>
-                                        <Dropdown.Item href='#'>Start-end</Dropdown.Item>
-                                        <Dropdown.Item href='#'>Rent</Dropdown.Item>
-                                        <Dropdown.Item href='#'>Days remaning</Dropdown.Item>
-                                        <Dropdown.Item href='#'>most recent event</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Unit or Tenant')}</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Type')}</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Start-end')}</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Rent')}</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Days remaning')}</Dropdown.Item>
+                                        <Dropdown.Item href='#'>{t('Most recent event')}</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </Card.Header>
@@ -131,21 +133,21 @@ const AnLeasingDraftLeases = () => {
                                     <thead>
                                         <tr>
                                             <th>
-                                                <strong>LEASE</strong>
+                                                <strong>{t('LEASE')}</strong>
                                             </th>
                                             <th>
-                                                <strong>ESIGNATURE STATUS</strong>
+                                                <strong>{t('ESIGNATURE STATUS')}</strong>
                                             </th>
                                             <th>
-                                                <strong>LEASE STATUS</strong>
+                                                <strong>{t('LEASE STATUS')}</strong>
                                             </th>
                                             <th>
-                                                <strong>AGENT</strong>
+                                                <strong>{t('AGENT')}</strong>
                                             </th>
                                             <th>
-                                                <strong>START DATE</strong>
+                                                <strong>{t('START DATE')}</strong>
                                             </th>
-                                            <th><strong>END DATE</strong></th>
+                                            <th><strong>{t('END DATE')}</strong></th>
                                         </tr>
                                     </thead>
                                     <tbody>
