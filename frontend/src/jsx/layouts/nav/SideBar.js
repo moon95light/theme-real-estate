@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 //import icon1 from "../../../images/icon1.png";
 
+import { withTranslation  } from 'react-i18next';
+
 class MM extends Component {
   componentDidMount() {
     this.$el = this.el;
@@ -41,6 +43,7 @@ class SideBar extends Component {
     loveEmoji: false,
   };
   render() {
+    const { t } = this.props;
     /// Path
     let path = window.location.pathname;
     path = path.split("/");
@@ -72,17 +75,7 @@ class SideBar extends Component {
         "post-details",
         "ecom-product-detail",
       ],
-      // email = ["email-compose", "email-inbox", "email-read"],
-      // shop = [
-      //   "ecom-product-grid",
-      //   "ecom-product-list",
-      //   "ecom-product-list",
-      //   "ecom-product-order",
-      //   "ecom-checkout",
-      //   "ecom-invoice",
-      //   "ecom-customers",
-      //   "ecom-product-detail",
-      // ],
+     
       charts = [
         "chart-rechart",
         "chart-flot",
@@ -125,20 +118,6 @@ class SideBar extends Component {
         "form-redux",
         "form-redux-wizard",
       ];
-      // widget = ["widget-basic"],
-      // forms = [
-      //   "form-element",
-      //   "form-wizard",
-      //   "form-editor-summernote",
-      //   "form-pickers",
-      //   "form-validation-jquery",
-      // ],
-      // table = [
-      //   "table-bootstrap-basic",
-      //   "table-datatable-basic",
-      //   "table-sorting",
-      //   "table-filtering",
-      // ];
 
     return (
       <div className="deznav">
@@ -147,245 +126,126 @@ class SideBar extends Component {
             <li>
               <Link className="" to="/dashboard" onClick={() => this.props.onClick()}>
                 <i className="flaticon-381-networking"></i>
-                <span className="nav-text">Dashboard</span>
+                <span className="nav-text">{t('bdashboard')}</span>
               </Link>
             </li>
             <li className={`${dashBoard.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="/dashboard" onClick={() => this.props.onClick()}>
                 <i className="flaticon-381-layer-1"></i>
-                <span className="nav-text">Rentals</span>
+                <span className="nav-text">{t('Rentals')}</span>
               </Link>
               <ul >
-                
+
                 <li>
                   <Link className={`${path === "analytics" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-properties">
-                    Properties
+                    {t('Properties')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "review" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-rentroll" >
-                    Rent Roll
+                    {t('rentroll')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "order-list" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-tenants">
-                    Tenants
+                    {t('btenants')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "customer-list" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-rentalowners"
                   >
-                    Rental Owners
+                    {t('brentalowners')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "property-details" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-outstandingbalance">
-                    Outstanding Balance
+                    {t('boutstandingbalance')}
                   </Link>
                 </li>
-                {/* <li>
-                  <Link className={`${path === "task" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/task">Task</Link>
-                </li> */}
+              
               </ul>
             </li>
             <li className={`${app.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
                 <i className="flaticon-381-television"></i>
-                <span className="nav-text">Leasing</span>
+                <span className="nav-text">{t('bleasing')}</span>
               </Link>
               <ul >
                 <li>
-                  <Link className={`${path === "app-profile" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-listings">Listings</Link>
+                  <Link className={`${path === "app-profile" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-listings">{t('blistings')}</Link>
                 </li>
                 <li>
-                  <Link className={`${path === "post-details" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-applicants">Applicants</Link>
+                  <Link className={`${path === "post-details" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-applicants">{t('bapplicants')}</Link>
                 </li>
-                {/* <li className={`${email.includes(path) ? "mm-active" : ""}`}>
-                  <Link className="has-arrow" to="#" >Email</Link>
-                  <ul
-
-                    className={`${email.includes(path) ? "mm-show" : ""}`}
-                  >
-                    <li>
-                      <Link
-                        className={`${path === "email-compose" ? "mm-active" : ""
-                          }`}
-                        to="/email-compose"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Compose
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "email-inbox" ? "mm-active" : ""
-                          }`}
-                        to="/email-inbox"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Inbox
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "email-read" ? "mm-active" : ""
-                          }`}
-                        to="/email-read"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Read
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
                 <li>
                   <Link className={`${path === "app-calender" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-draftleases">
-                    Draft Leases
+                    {t('bdraftlease')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "app-calender" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-reaserenewals">
-                    Lease Renewals
+                    {t('bleaserenewals')}
                   </Link>
                 </li>
-                {/* <li className={`${shop.includes(path) ? "mm-active" : ""}`}>
-                  <Link className="has-arrow" to="#" >
-                    Shop
-                  </Link>
-                  <ul
-
-                    className={`${shop.includes(path) ? "mm-show" : ""}`}
-                  >
-                    <li>
-                      <Link
-                        className={`${path === "ecom-product-grid" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-product-grid"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Product Grid
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-product-list" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-product-list"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Product List
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-product-detail" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-product-detail"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Product Details
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-product-order" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-product-order"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Order
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-checkout" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-checkout"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Checkout
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-invoice" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-invoice"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Invoice
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={`${path === "ecom-customers" ? "mm-active" : ""
-                          }`}
-                        to="/ecom-customers"
-                        onClick={() => this.props.onClick()}
-                      >
-                        Customers
-                      </Link>
-                    </li>
-                  </ul>
-                </li> */}
+               
               </ul>
             </li>
             <li className={`${charts.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
                 <i className="flaticon-381-controls-3"></i>
-                <span className="nav-text">Accounting</span>
+                <span className="nav-text">{t('bacounting')}</span>
               </Link>
               <ul >
                 <li>
                   <Link
                     className={`${path === "chart-rechart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-financials">
-                    Financials
+                    {t('bfinincial')}
                   </Link>
                 </li>
                 <li>
                   <Link
                     className={`${path === "chart-chartjs" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-generalledger">
-                    General Ledger
+                    {t('bgeneralledger')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-chartist" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-banking">
-                    Banking
+                    {t('bbanking')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-sparkline" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-bills">
-                    Bills
+                    {t('bbills')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-recurtrans" >
-                    Recurring Transactions
+                    {t('brecurringtransaction')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-EFT" >
-                    EFT Approvals
+                    {t('beftapprovals')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-budgets" >
-                    Budgets
+                    {t('bbudget')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-chart" >
-                    Chart
+                  {t('bchart')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-companyfinancials" >
-                    CompanyFinancials
+                  {t('company')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "chart-apexchart" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-tax" >
-                  1099 Tax Filings
+                    1099 {t('taxfiling')}
                   </Link>
                 </li>
               </ul>
@@ -393,343 +253,62 @@ class SideBar extends Component {
             <li className={`${plugins.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
                 <i className="flaticon-381-heart"></i>
-                <span className="nav-text">Maintenance</span>
+                <span className="nav-text">{t('bmaintenance')}</span>
               </Link>
               <ul >
                 <li>
-                  <Link className={`${path === "uc-select2" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-vendors">Vendors</Link>
+                  <Link className={`${path === "uc-select2" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-vendors">{t('bvendors')}</Link>
                 </li>
                 <li>
-                  <Link className={`${path === "uc-nestable" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-workorders">Work Orders</Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "uc-noui-slider" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-propertyinsp">Property Inspections
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link
-                    className={`${path === "uc-sweetalert" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/uc-sweetalert"
-                  >
-                    Sweet Alert
-                  </Link>
+                  <Link className={`${path === "uc-nestable" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-workorders">{t('workoders')}</Link>
                 </li>
                 <li>
                   <Link
-                    className={`${path === "uc-toastr" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/uc-toastr"
-                  >
-                    Toastr
+                    className={`${path === "uc-noui-slider" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-propertyinsp">{t('bpropertyinspections')}
                   </Link>
                 </li>
-                <li>
-                  <Link className={`${path === "map-jqvmap" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/map-jqvmap">Jqv Map</Link>
-                </li>
-                <li>
-                  <Link className={`${path === "uc-lightgallery" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/uc-lightgallery">Light Gallery</Link>
-                </li> */}
-                {/* <li><Link className={`${path === "posts" ? "mm-active" : ""}`} to="/posts">Posts</Link></li> */}
+               
               </ul>
             </li>
             <li className={`${redux.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
-                <i className="flaticon-381-book"></i><span className="nav-text">Tasks</span>
+                <i className="flaticon-381-book"></i><span className="nav-text">{t('btasks')}</span>
               </Link>
               <ul>
-                <li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/an-inrequests">Incoming Requests</Link></li>
-                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-mytasks">My Tasks</Link></li>
-                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-alltasks">All Tasks</Link></li>
-                <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/an-rectasks">Recurring Tasks</Link></li>
+                <li><Link className={`${path === "todo" ? "mm-active" : ""}`} to="/an-inrequests">{t('bincomingrequest')}</Link></li>
+                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-mytasks">{t('bmytasks')}</Link></li>
+                <li><Link className={`${path === "form-redux" ? "mm-active" : ""}`} to="/an-alltasks">{t('balltasks')}</Link></li>
+                <li><Link className={`${path === "form-redux-wizard" ? "mm-active" : ""}`} to="/an-rectasks">{t('recurringtasks')}</Link></li>
               </ul>
             </li>
             <li className={`${bootstrap.includes(path) ? "mm-active" : ""}`}>
               <Link className="has-arrow ai-icon" to="#" >
                 <i className="flaticon-381-internet"></i>
-                <span className="nav-text">Communication</span>
+                <span className="nav-text">{t('bcommunication')}</span>
               </Link>
               <ul >
                 <li>
                   <Link className={`${path === "ui-accordion" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-emails">
-                    Emails
+                  {t('emails')}
                   </Link>
                 </li>
                 <li>
                   <Link className={`${path === "ui-alert" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/an-textmessages" >
-                    Text Messages
+                    {t('textmessage')}
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    className={`${path === "ui-badge" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-badge"
-                  >
-                    Badge
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-button" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-button"
-                  >
-                    Button
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-modal" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-modal"
-                  >
-                    Modal
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-button-group" ? "mm-active" : ""
-                      }`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-button-group"
-                  >
-                    Button Group
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-list-group" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-list-group"
-                  >
-                    List Group
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-media-object" ? "mm-active" : ""
-                      }`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-media-object"
-                  >
-                    Media Object
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-card" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-card"
-                  >
-                    Cards
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-carousel" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-carousel"
-                  >
-                    Carousel
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-dropdown" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-dropdown"
-                  >
-                    Dropdown
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-popover" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-popover"
-                  >
-                    Popover
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-progressbar" ? "mm-active" : ""
-                      }`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-progressbar"
-                  >
-                    Progressbar
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-tab" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-tab"
-                  >
-                    Tab
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-typography" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-typography"
-                  >
-                    Typography
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-pagination" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-pagination"
-                  >
-                    Pagination
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${path === "ui-grid" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()}
-                    to="/ui-grid"
-                  >
-                    Grid
-                  </Link>
-                </li> */}
+                
               </ul>
             </li>
-            {/* <li className={`${widget.includes(path) ? "mm-active" : ""}`}>
-              <Link to="widget-basic" className="ai-icon" >
-                <i className="flaticon-381-settings-2"></i>
-                <span className="nav-text">Widget</span>
-              </Link>
-            </li> */}
-            {/* <li className={`${forms.includes(path) ? "mm-active" : ""}`}>
-              <Link className="has-arrow ai-icon" to="#" >
-                <i className="flaticon-381-notepad"></i>
-                <span className="nav-text forms">Forms</span>
-              </Link>
-              <ul >
-                <li>
-                  <Link className={`${path === "form-element" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/form-element">Form Elements</Link>
-                </li>
-                <li>
-                  <Link className={`${path === "form-wizard" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/form-wizard">Wizard</Link>
-                </li>
-                <li>
-                  <Link className={`${path === "form-editor-summernote" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/form-editor-summernote">Summernote</Link>
-                </li>
-                <li>
-                  <Link className={`${path === "form-pickers" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/form-pickers">Pickers</Link>
-                </li>
-                <li>
-                  <Link className={`${path === "form-validation-jquery" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/form-validation-jquery">Jquery Validate</Link>
-                </li>
-              </ul>
-            </li>
-            <li className={`${table.includes(path) ? "mm-active" : ""}`}>
-              <Link className="has-arrow ai-icon" to="#" >
-                <i className="flaticon-381-network"></i>
-                <span className="nav-text">Table</span>
-              </Link>
-              <ul >
-                <li>
-                  <Link className={`${path === "table-bootstrap-basic" ? "mm-active" : ""}`}
-                    onClick={() => this.props.onClick()} to="/table-bootstrap-basic"
-                  >
-                    Bootstrap
-                  </Link>
-                </li>
-                <li>
-                  <Link className={`${path === "table-datatable-basic" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/table-datatable-basic">
-                    Datatable
-                  </Link>
-                </li>
-                <li>
-                  <Link className={`${path === "table-filtering" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/table-filtering">
-                    Table Filtering
-                  </Link>
-                </li>
-                <li>
-                  <Link className={`${path === "table-sorting" ? "mm-active" : ""}`} onClick={() => this.props.onClick()} to="/table-sorting">
-                    Table Sorting
-                  </Link>
-                </li>
-              </ul>
-            </li> */}
-            {/* <li className={`${pages.includes(path) ? "mm-active" : ""}`}>
-                <Link className="has-arrow ai-icon" to="#" >
-                    <i className="flaticon-381-layer-1"></i>
-                    <span className="nav-text">Pages</span>
-                </Link>
-              <ul >
-                <li className={`${error.includes(path) ? "mm-active" : ""}`}>
-                    <Link className="has-arrow" to="#" >Error</Link>
-                      <ul >
-                        <li>
-                            <Link className={`${ path === "page-error-400" ? "mm-active" : ""}`}
-                                to="/page-error-400" onClick={() => this.props.onClick3()}
-                            >
-                                Error 400
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className={`${ path === "page-error-403" ? "mm-active" : ""}`}
-                                to="/page-error-403"   onClick={() => this.props.onClick3()}
-                            >
-                                Error 403
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                className={`${ path === "page-error-404" ? "mm-active" : ""}`}
-                                to="/page-error-404" onClick={() => this.props.onClick3()}
-                              >
-                                Error 404
-                            </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className={`${
-                              path === "page-error-500" ? "mm-active" : ""
-                            }`}
-                            to="/page-error-500"
-                            onClick={() => this.props.onClick3()}
-                          >
-                            Error 500
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className={`${
-                              path === "page-error-503" ? "mm-active" : ""
-                            }`}
-                            to="/page-error-503"
-                            onClick={() => this.props.onClick3()}
-                          >
-                            Error 503
-                          </Link>
-                        </li>
-                      </ul>
-                </li>
-                <li>
-                    <Link className={`${ path === "page-lock-screen" ? "mm-active" : "" }`} to="/page-lock-screen" onClick={() => this.props.onClick3()}>
-                        Lock Screen
-                    </Link>
-                </li>
-              </ul>
-            </li> */}
+            
           </MM>
           <div className="copyright">
             <p className="fs-14 font-w200">
-              <strong className="font-w400">Omah Dashboard</strong> ©All Rights
-              Reserved
+              <strong className="font-w400">{t('realesteateownerdashboard')}</strong> ©{t('allrights')}
+              {t('breversed')}
             </p>
             <p>
-              Made with{" "}
+              {t('bmadewith')}{" "}
               <span
                 className={`${this.state.loveEmoji ? "heart heart-blast" : "heart"
                   }`}
@@ -737,7 +316,7 @@ class SideBar extends Component {
                   this.setState({ loveEmoji: !this.state.loveEmoji })
                 }
               ></span>{" "}
-              by DexignZone
+              {t('by')} DexignZone
             </p>
           </div>
         </PerfectScrollbar>
@@ -746,4 +325,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+export default withTranslation()(SideBar);

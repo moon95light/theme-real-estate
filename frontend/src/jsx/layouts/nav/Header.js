@@ -9,8 +9,10 @@ import profile from "../../../images/profile/17.jpg";
 import avatar from "../../../images/avatar/1.jpg";
 import { Dropdown } from "react-bootstrap";
 import Logout from './Logout';
+import { useTranslation } from 'react-i18next';
 
 const Header = ({ onNote }) => {
+  const { t } = useTranslation();
   return (
     <div className="header">
       <div className="header-content">
@@ -24,7 +26,7 @@ const Header = ({ onNote }) => {
                       <input
                         className="form-control"
                         type="search"
-                        placeholder="Search Here"
+                        placeholder={t('searchhere')}
                         aria-label="Search"
                       />
                     </form>
@@ -84,9 +86,9 @@ const Header = ({ onNote }) => {
                             <img alt="images" width={50} src={avatar} />
                           </div>
                           <div className="media-body">
-                            <h6 className="mb-1">Dr sultads Send you Photo</h6>
+                            <h6 className="mb-1">{t('drsuitadessend')}</h6>
                             <small className="d-block">
-                              29 July 2020 - 02:26 PM
+                              29 {t('bjuly')} 2020 - 02:26 PM
                             </small>
                           </div>
                         </div>
@@ -96,10 +98,10 @@ const Header = ({ onNote }) => {
                           <div className="media mr-2 media-info">KG</div>
                           <div className="media-body">
                             <h6 className="mb-1">
-                              Resport created successfully
+                            {t('resortcreated')}            
                             </h6>
                             <small className="d-block">
-                              29 July 2020 - 02:26 PM
+                              29 {t('bjuly')} 2020 - 02:26 PM
                             </small>
                           </div>
                         </div>
@@ -110,48 +112,9 @@ const Header = ({ onNote }) => {
                             <i className="fa fa-home" />
                           </div>
                           <div className="media-body">
-                            <h6 className="mb-1">Reminder : Treatment Time!</h6>
+                            <h6 className="mb-1">{t('remindertreatment')}</h6>
                             <small className="d-block">
-                              29 July 2020 - 02:26 PM
-                            </small>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="timeline-panel">
-                          <div className="media mr-2">
-                            <img alt="" width={50} src={avatar} />
-                          </div>
-                          <div className="media-body">
-                            <h6 className="mb-1">Dr sultads Send you Photo</h6>
-                            <small className="d-block">
-                              29 July 2020 - 02:26 PM
-                            </small>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="timeline-panel">
-                          <div className="media mr-2 media-danger">KG</div>
-                          <div className="media-body">
-                            <h6 className="mb-1">
-                              Resport created successfully
-                            </h6>
-                            <small className="d-block">
-                              29 July 2020 - 02:26 PM
-                            </small>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="timeline-panel">
-                          <div className="media mr-2 media-primary">
-                            <i className="fa fa-home" />
-                          </div>
-                          <div className="media-body">
-                            <h6 className="mb-1">Reminder : Treatment Time!</h6>
-                            <small className="d-block">
-                              29 July 2020 - 02:26 PM
+                              29 {t('bjuly')} 2020 - 02:26 PM
                             </small>
                           </div>
                         </div>
@@ -173,7 +136,7 @@ const Header = ({ onNote }) => {
                     </div>
                   </PerfectScrollbar>
                   <Link className="all-notification" to="#">
-                    See all notifications <i className="ti-arrow-right" />
+                  {t('seeallnotification')} <i className="ti-arrow-right" />
                   </Link>
                 </Dropdown.Menu>
               </Dropdown>
@@ -237,9 +200,9 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>10 minutes ago</span>
+                          <span>10 {t('minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            Youtube, a video-sharing website, goes live{" "}
+                            Youtube, {t('avideosharingwebsite')}{" "}
                             <strong className="text-primary">$500</strong>.
                           </h6>
                         </Link>
@@ -250,14 +213,14 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>20 minutes ago</span>
+                          <span>{t('20 minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            New order placed{" "}
+                          {t('neworderplaced')}{" "}
                             <strong className="text-info">#XF-2356.</strong>
                           </h6>
                           <p className="mb-0">
-                            Quisque a consequat ante Sit amet magna at
-                            volutapt...
+                          {t('quisqueaconsequat')}                           
+                          {t('volutapt')}...
                           </p>
                         </Link>
                       </li>
@@ -267,10 +230,10 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>30 minutes ago</span>
+                          <span>30 {t('minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            john just buy your product{" "}
-                            <strong className="text-warning">Sell $250</strong>
+                          {t('john justbuyyourproduct')}{" "}
+                            <strong className="text-warning">{t('bsell')} $250</strong>
                           </h6>
                         </Link>
                       </li>
@@ -280,9 +243,9 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>15 minutes ago</span>
+                          <span>15 {t('minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            StumbleUpon is acquired by eBay.{" "}
+                          {t('stumbleuponissentence')}{" "}
                           </h6>
                         </Link>
                       </li>
@@ -292,9 +255,9 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>20 minutes ago</span>
+                          <span>{t('20 minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            Mashable, a news website and blog, goes live.
+                          {t('maxhableanewswebsitesentence')}                          
                           </h6>
                         </Link>
                       </li>
@@ -304,9 +267,9 @@ const Header = ({ onNote }) => {
                           className="timeline-panel c-pointer text-muted"
                           to="#"
                         >
-                          <span>20 minutes ago</span>
+                          <span>20{t('minutes')} {t('ago')}</span>
                           <h6 className="mb-0">
-                            Mashable, a news website and blog, goes live.
+                          {t('maxhableanewswebsitesentence')}                          
                           </h6>
                         </Link>
                       </li>
@@ -361,7 +324,7 @@ const Header = ({ onNote }) => {
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                       <circle cx={12} cy={7} r={4} />
                     </svg>
-                    <span className="ml-2">Profile </span>
+                    <span className="ml-2">{t('bprofile')} </span>
                   </Link>
                   <Link to="/email-inbox" className="dropdown-item ai-icon">
                     <svg
@@ -380,7 +343,7 @@ const Header = ({ onNote }) => {
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                       <polyline points="22,6 12,13 2,6" />
                     </svg>
-                    <span className="ml-2">Inbox </span>
+                    <span className="ml-2">{t('binbox')} </span>
                   </Link>
                   <Logout />
                 </Dropdown.Menu>
