@@ -90,11 +90,11 @@ const AnRentalsProperties = () => {
                                     drop='down'
                                     variant='outline-primary'
                                     size='sm'
-                                    title=' All rentals'
+                                    title= {t('All') + ' ' + t('rentals')}
                                     className='mt-1 mr-1'
                                 >
                                     <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
-                                    <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('Receive')} {t('LEASE')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                     <div className='dropdown-divider'></div>
                                     <Dropdown.Item href='#'>Separated link</Dropdown.Item>

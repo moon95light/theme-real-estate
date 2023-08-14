@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import PageTitle from "../../layouts/PageTitle";
 import { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
+
 import Select from 'react-select';
 import {
     Row,
@@ -26,6 +28,7 @@ const options = [
 ]
 
 const AnRentalsTenants = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -55,12 +58,12 @@ const AnRentalsTenants = () => {
         <>
             <Fragment>
                 <div className="page-titles">
-                    <h4 className="page-title">Tenants</h4>
+                    <h4 className="page-title">{t('Tenants')}</h4>
                     <div className="property-buttons">
-                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add lease</button>
-                        <Button className='mr-2 btn-xs' variant='outline-info'>Receive payment</Button>
-                        <Button className='mr-2 btn-xs' variant='outline-info'>Commpose Email</Button>
-                        <Button className='mr-2 btn-xs' variant='outline-info'>Resident center user</Button>
+                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('lease')}</button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>{t('Receive payment')}</Button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>{t('Commpose Email')}</Button>
+                        <Button className='mr-2 btn-xs' variant='outline-info'>{t('Resident center user')}</Button>
                     </div>
                 </div>
                 <Row>
@@ -73,10 +76,10 @@ const AnRentalsTenants = () => {
                                     drop='down'
                                     variant='outline-primary'
                                     size='sm'
-                                    title=' All rentals'
+                                    title={t('All') + ' ' + t('rentals')}
                                     className='mt-1 mr-1'
                                 >
-                                    <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
                                     <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
                                     <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                     <div className='dropdown-divider'></div>
@@ -89,7 +92,7 @@ const AnRentalsTenants = () => {
                                     variant='primary'
                                     size='sm'
                                     className='mt-1 mr-2'
-                                    title=' All &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+                                    title= {t('All')}
                                 >
                                     <Dropdown.Item href='#'>Active</Dropdown.Item>
                                     <Dropdown.Item href='#'>Past</Dropdown.Item>
@@ -114,19 +117,19 @@ const AnRentalsTenants = () => {
                                     <thead>
                                         <tr>
                                             <th>
-                                                <strong>FIRST NAME | LAST NAME</strong>
+                                                <strong>{t('FIRST NAME | LAST NAME')}</strong>
                                             </th>
                                             <th>
-                                                <strong>UNIT NUMBER</strong>
+                                                <strong>{t('UNIT NUMBER')}</strong>
                                             </th>
                                             <th>
-                                                <strong>PHONE</strong>
+                                                <strong>{t('PHONE')}</strong>
                                             </th>
                                             <th>
-                                                <strong>EMAIL</strong>
+                                                <strong>{t('EMAIL')}</strong>
                                             </th>
                                             <th>
-                                                <strong>RESIDENT CENTER STATUS</strong>
+                                                <strong>{t('RESIDENT CENTER STATUS')}</strong>
                                             </th>
                                             <th></th>
                                         </tr>
@@ -233,9 +236,9 @@ const AnRentalsTenants = () => {
                                                         {svg1}
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
-                                                        <Dropdown.Item>Receive payment</Dropdown.Item>
-                                                        <Dropdown.Item>Lease ledger</Dropdown.Item>
-                                                        <Dropdown.Item>Tenant summary</Dropdown.Item>
+                                                        <Dropdown.Item>{t('Receive payment')}</Dropdown.Item>
+                                                        <Dropdown.Item>{t('Lease ledger')}</Dropdown.Item>
+                                                        <Dropdown.Item>{t('Tenant summary')}</Dropdown.Item>
                                                     </Dropdown.Menu>
                                                 </Dropdown>
                                             </td>

@@ -13,11 +13,13 @@ import {
     DropdownButton,
     ButtonGroup,
 } from "react-bootstrap";
+import { useTranslation } from 'react-i18next';
 
 /// imge
 import { Link } from "react-router-dom";
 
 const AnRentalsOutStandingBalance = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -66,7 +68,7 @@ const AnRentalsOutStandingBalance = () => {
     return (
         <Fragment>
             <div className="page-titles">
-                <h4 className="page-title">Outstanding lease balances</h4>
+                <h4 className="page-title">{t('Outstanding lease balances')}</h4>
             </div>
             <Row>
                 <Col lg={12}>
@@ -78,10 +80,10 @@ const AnRentalsOutStandingBalance = () => {
                                 drop='down'
                                 variant='outline-primary'
                                 size='sm'
-                                title=' All rentals'
+                                title={t('All') + ' ' + t('rentals')}
                                 className='mt-1'
                             >
-                                <Dropdown.Item href='#'>All rentals</Dropdown.Item>
+                                <Dropdown.Item href='#'>{t('All')} {t('rentals')}</Dropdown.Item>
                                 <Dropdown.Item href='#'>74 Grove Street (Single family home)</Dropdown.Item>
                                 <Dropdown.Item href='#'>160 East End Avenue (condo/townhouse)</Dropdown.Item>
                                 <div className='dropdown-divider'></div>
@@ -137,25 +139,25 @@ const AnRentalsOutStandingBalance = () => {
                                             <strong>+</strong>
                                         </th>
                                         <th>
-                                            <strong>LEASE</strong>
+                                            <strong>{t('LEASE')}</strong>
                                         </th>
                                         <th>
-                                            <strong>PAST DUE EMAIL</strong>
+                                            <strong>{t('PAST DUE EMAIL')}</strong>
                                         </th>
                                         <th>
-                                            <strong>0 - 30 DAYS</strong>
+                                            <strong>0 - 30 {t('DAYS')}</strong>
                                         </th>
                                         <th>
-                                            <strong>31 - 60 DAYS</strong>
+                                            <strong>31 - 60 {t('DAYS')}</strong>
                                         </th>
                                         <th>
-                                            <strong>61 - 90 DAYS</strong>
+                                            <strong>61 - 90 {t('DAYS')}</strong>
                                         </th>
                                         <th>
-                                            <strong>90+ DAYS</strong>
+                                            <strong>90+ {t('DAYS')}</strong>
                                         </th>
                                         <th>
-                                            <strong>BALANCE</strong>
+                                            <strong>{t('BALANCE')}</strong>
                                         </th>
                                         <th>
 

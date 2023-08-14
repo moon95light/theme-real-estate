@@ -5,11 +5,14 @@ import { Dropdown, ProgressBar, ButtonGroup, Button,
     SplitButton,
     DropdownButton, } from "react-bootstrap";
 import '../../../css/applicant.css';
+import { useTranslation } from 'react-i18next';
+
 
 /// images
 import { Link } from "react-router-dom";
 
 const AnLeasingApplicants = () => {
+    const { t } = useTranslation();
     const drop = (
         <Dropdown>
             <Dropdown.Toggle variant="primary" className="table-dropdown i-false btn  tp-btn-light sharp">
@@ -25,11 +28,11 @@ const AnLeasingApplicants = () => {
                 </span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item href="#">Applicant summary</Dropdown.Item>
-                <Dropdown.Item href="#">View application</Dropdown.Item>
-                <Dropdown.Item href="#">Run credit check</Dropdown.Item>
-                <Dropdown.Item href="#">Add lease</Dropdown.Item>
-                <Dropdown.Item href="#">Send opt-in text message</Dropdown.Item>
+                <Dropdown.Item href="#">{t('Applicant summary')}</Dropdown.Item>
+                <Dropdown.Item href="#">{t('View application')}</Dropdown.Item>
+                <Dropdown.Item href="#">{t('Run credit check')}</Dropdown.Item>
+                <Dropdown.Item href="#">{t('Add lease')}</Dropdown.Item>
+                <Dropdown.Item href="#">{t('Send opt-in text message')}</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
@@ -37,11 +40,11 @@ const AnLeasingApplicants = () => {
     return (
         <Fragment>
             <div className="page-titles">
-                <h4 className="page-title">Applicants</h4>
+                <h4 className="page-title">{t('Applicants')}</h4>
                 <div className="property-buttons">
-                    <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">Add properties</button>
-                    <Button className='mr-2 btn-xs' variant='outline-info'>Renew lease</Button>
-                    <Button className='mr-2 btn-xs' variant='outline-info'>Receive payment</Button>
+                    <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add properties')}</button>
+                    <Button className='mr-2 btn-xs' variant='outline-info'>{t('Renew lease')}</Button>
+                    <Button className='mr-2 btn-xs' variant='outline-info'>{t('Receive payment')}</Button>
 
                     <DropdownButton
                         as={ButtonGroup}
@@ -110,15 +113,15 @@ const AnLeasingApplicants = () => {
                                 <table className="table mb-0 table-striped respon-table-data">
                                     <thead>
                                         <tr>
-                                            <th>FIRST NAME | LAST NAME</th>
-                                            <th>UNIT</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
+                                            <th>{t('FIRST NAME | LAST NAME')}</th>
+                                            <th>{t('UNIT')}</th>
+                                            <th>{t('EMAIL')}</th>
+                                            <th>{t('PHONE')}</th>
                                             <th className="pl-5" style={{ minWidth: 200 }}>
-                                                STATUS
+                                                {t('STATUS')}
                                             </th>
-                                            <th>LAST UPDATED</th>
-                                            <th>%COMPLETE</th>
+                                            <th>{t('LAST UPDATED')}</th>
+                                            <th>%{t('COMPLETE')}</th>
                                         </tr>
                                     </thead>
                                     <tbody id="customers">
@@ -146,7 +149,7 @@ const AnLeasingApplicants = () => {
                                                     <a href="tel:2012001851">(201) 200-1851</a>
                                                 </div>
                                                 <div className="send-opt-msg">
-                                                    <a href="/">Send opt-in text message </a>
+                                                    <a href="/">{t('Send opt-in text message')} </a>
                                                 </div>
                                             </td>
                                             <td className="py-2 pl-5 wspace-no">

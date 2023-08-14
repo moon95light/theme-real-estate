@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import PageTitle from '../../layouts/PageTitle'
+import PageTitle from '../../layouts/PageTitle';
+import { useTranslation } from 'react-i18next';
+
 import {
     Row, Col, Table, Card, Tab, Nav, Badge, Button,
     SplitButton, Dropdown, DropdownButton, ButtonGroup
@@ -8,6 +10,7 @@ import {
 import '../../../css/leasing.css';
 
 const AnLeasingListings = () => {
+    const { t } = useTranslation();
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -21,13 +24,13 @@ const AnLeasingListings = () => {
     const tabData = [
         {
             name: 'Home',
-            title: 'Listed units',
+            title: t('Listed units'),
             content: (
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
                             <div className='input-group col-sm-2 input-group-sm'>
-                                <input type='text' className='form-control' placeholder='All rentals' />
+                                <input type='text' className='form-control' placeholder={t('All') + ' ' + t('rentals')} />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
@@ -70,13 +73,13 @@ const AnLeasingListings = () => {
                             <Table responsive bordered>
                                 <thead>
                                     <tr>
-                                        <th>LISTED</th>
-                                        <th>AVAILABLE</th>
-                                        <th>UNIT</th>
-                                        <th>BEDS</th>
-                                        <th>BATHS</th>
-                                        <th>SIZE</th>
-                                        <th className='remove-listing-rent'>LISTING RENT</th>
+                                        <th>{t('LISTED')}</th>
+                                        <th>{t('AVAILABLE')}</th>
+                                        <th>{t('UNIT')}</th>
+                                        <th>{t('BEDS')}</th>
+                                        <th>{t('BATHS')}</th>
+                                        <th>{t('SIZE')}</th>
+                                        <th className='remove-listing-rent'>{t('LISTING RENT')}</th>
                                         <th className='remove-th'></th>
                                     </tr>
                                 </thead>
@@ -198,13 +201,13 @@ const AnLeasingListings = () => {
         },
         {
             name: 'Profile',
-            title: 'Unlisted units',
+            title: t('Unlisted units'),
             content: (
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
                             <div className='input-group col-sm-2 input-group-sm'>
-                                <input type='text' className='form-control' placeholder='All rentals' />
+                                <input type='text' className='form-control' placeholder={t('All') + ' ' + t('rentals')} />
                                 <Dropdown className='input-group-prepend'>
                                     <Dropdown.Toggle
                                         variant=''
@@ -247,11 +250,11 @@ const AnLeasingListings = () => {
                             <Table responsive bordered>
                                 <thead>
                                     <tr>
-                                        <th>STATUS</th>
-                                        <th>LEASE END</th>
-                                        <th>NEXT LEASE</th>
-                                        <th>UNIT</th>
-                                        <th>TENANTS</th>
+                                        <th>{t('STATUS')}</th>
+                                        <th>{t('LEASE END')}</th>
+                                        <th>{t('NEXT LEASE')}</th>
+                                        <th>{t('UNIT')}</th>
+                                        <th>{t('TENANTS')}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -289,9 +292,9 @@ const AnLeasingListings = () => {
     return (
         <Fragment>
             <div className="page-titles">
-                <h4 className="page-title">  Listings</h4>
+                <h4 className="page-title">  {t('Listings')}</h4>
                 <div className="property-buttons">
-                    <Button className='ml- btn-xs' variant='outline-info'>Update unit details</Button>
+                    <Button className='ml- btn-xs' variant='outline-info'>{t('Update unit details')}</Button>
                 </div>
             </div>
             <Row>
