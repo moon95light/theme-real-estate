@@ -1,12 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 
-// Page titie
-
-/// Scroll
-import PerfectScrollbar from 'react-perfect-scrollbar'
-
-// BS
 import { Dropdown, Card, ProgressBar } from 'react-bootstrap'
 
 const AnAccountingCompanyFinancials = () => {
