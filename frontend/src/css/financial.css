@@ -1,0 +1,20 @@
+.company-and-property{
+    font-size:10px;
+    margin-bottom: 0;
+}
+.financial-radio{
+    font-size: 12px;
+    padding-bottom: 0px!important;
+    padding-top: 0px!important;
+    padding-left: 20px!important;
+    padding-right: 30px!important;
+    margin-top: 0px!important;
+}
+.picker-input__text{
+    padding-top: 13px!important;
+    padding-bottom: 7px!important;
+    font-size: 15px;
+}
+.range-picker-input{
+    border: 0;
+}
