@@ -9,37 +9,6 @@ import PerfectScrollbar from 'react-perfect-scrollbar'
 // BS
 import { Dropdown, Card, ProgressBar } from 'react-bootstrap'
 
-// images
-import avatar1 from '../../../images/avatar/1.jpg'
-import avatar2 from '../../../images/avatar/2.jpg'
-import avatar3 from '../../../images/avatar/3.jpg'
-import avatar4 from '../../../images/avatar/4.jpg'
-import profile from '../../../images/profile/profile.png'
-import bg5 from '../../../images/big/img5.jpg'
-import bg1 from '../../../images/big/img1.jpg'
-
-// Chart
-import { Sparklines, SparklinesLine, SparklinesBars } from 'react-sparklines'
-import Pie from '../WidgetBasic/pie'
-import LineChart from '../WidgetBasic/line3'
-import LineChart4 from '../WidgetBasic/line4'
-import LineChart3 from '../WidgetBasic/line3'
-import BarChart2 from '../WidgetBasic/bar2'
-import BarChart3 from '../WidgetBasic/bar3'
-import LiveBar from '../WidgetBasic/bar4'
-import RealTime from '../WidgetBasic/realtime'
-import BarChartNoPadding from '../WidgetBasic/BarChartNoPadding'
-import PositiveNagetive from '../WidgetBasic/PositiveNagative'
-import BarChart from '../WidgetBasic/Bar'
-import TopProducts1 from '../WidgetBasic/TopProducts1'
-import TopProducts2 from '../WidgetBasic/TopProducts2'
-import WeeklySales1 from '../WidgetBasic/WeeklySales1'
-import WeeklySales2 from '../WidgetBasic/WeeklySales2'
-import AllSell1 from '../WidgetBasic/AllSell1'
-import AllSell2 from '../WidgetBasic/AllSell2'
-// Data
-const sampleData = [10, 24, 30, 10, 15, 0, 20, 30, 65, 12, 10, 3, 6, 8, 2, 6]
-
 const AnAccountingCompanyFinancials = () => {
     return (
         <Fragment>
