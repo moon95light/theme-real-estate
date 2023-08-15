@@ -1,14 +1,17 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 import { Dropdown, Card, ProgressBar } from 'react-bootstrap'
 
 const AnAccountingCompanyFinancials = () => {
+    const { t } = useTranslation();
+
     return (
         <Fragment>
             {/* <Ext /> */}
             <div className="page-titles">
-                <h4 className="page-title">Company Financials</h4>
+                <h4 className="page-title">{t('Company Financials')}</h4>
             </div>
             <div className='row'>
                 <div className='col-xl-3 col-xxl-4 col-lg-6 col-sm-6'>
