@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageTitle from '../../layouts/PageTitle';
 import { useTranslation } from 'react-i18next';
-
+import Select from 'react-select';
 import {
     Row, Col, Table, Card, Tab, Nav, Badge, Button,
     SplitButton, Dropdown, DropdownButton, ButtonGroup
@@ -11,6 +11,12 @@ import '../../../css/financial.css';
 
 const AnAccountingBills = () => {
     const { t } = useTranslation();
+    const [selectedOption, setSelectedOption] = useState(null);
+    const options = [
+        { value: t('All'), label: 'All' },
+        { value: 'Multiple (55)', label: 'Multiple (55)' },
+        { value: 'Custom', label: 'Custom' },
+    ]
     const svg1 = (
         <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -21,6 +27,27 @@ const AnAccountingBills = () => {
             </g>
         </svg>
     );
+    const chackbox = document.querySelectorAll(".custom-checkbox input");
+    const motherChackBox = document.querySelector("#checkbox1_exam_all");
+    const chackboxFun = (type) => {
+        for (let i = 0; i < chackbox.length; i++) {
+            const element = chackbox[i];
+            if (type === "all") {
+                if (motherChackBox.checked) {
+                    element.checked = true;
+                } else {
+                    element.checked = false;
+                }
+            } else {
+                if (!element.checked) {
+                    motherChackBox.checked = false;
+                    break;
+                } else {
+                    motherChackBox.checked = true;
+                }
+            }
+        }
+    };
     const tabData = [
         {
             name: 'Home',
@@ -30,8 +57,10 @@ const AnAccountingBills = () => {
                     <Card>
                         <Card.Title>
                             <div className="property-buttons">
-                                <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('properties')}</button>
-
+                                <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Record bill')}</button>
+                                <Button className='mr-2 btn-xs' variant='outline-info'>
+                                    {t('Record credit')}
+                                </Button>
                                 <DropdownButton
                                     as={ButtonGroup}
                                     id='dropdown-button-drop-down'
@@ -39,57 +68,67 @@ const AnAccountingBills = () => {
                                     variant='outline-info'
                                     size='xs'
                                     className='mr-2 outline'
-                                    title=' Managemnet fees'
+                                    title={t('Pay bills')}
                                 >
-                                    <Dropdown.Item href='#'>{t('Collect')} {t('Management')} {t('fees')}</Dropdown.Item>
-                                    <Dropdown.Item href='#'>{t('Pay')} {t('out')} {t('income')} {t('management')} {t('accounts')}</Dropdown.Item>
+                                    <Dropdown.Item href='#'>{t('by check')}</Dropdown.Item>
                                 </DropdownButton>
                                 <Button className='mr-2 btn-xs' variant='outline-info'>
-                                    {t('Update')} {t('unit')} {t('details')}
+                                    {t('Collect markup')}
                                 </Button>
-                                <Button className='mr-2 btn-xs' variant='outline-info'>
-                                    {t('Property')} {t('groups')}
-                                </Button>
+                                <DropdownButton
+                                    as={ButtonGroup}
+                                    id='dropdown-button-drop-down-roll'
+                                    drop='down'
+                                    variant='outline-info'
+                                    size='xs'
+                                    className='dots mr-2'
+                                    title='•••'
+                                >
+                                    <Dropdown.Item href='#'>Update recurring charges</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Add meter reading</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Enter bulk charges</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Enter bulk Credits</Dropdown.Item>
+                                </DropdownButton>
                             </div>
                         </Card.Title>
                         <Card.Header className='listing-card-header'>
-                            <div className='input-group col-sm-2 input-group-sm'>
-                                <input type='text' className='form-control' placeholder={t('All') + ' ' + t('rentals')} />
-                                <Dropdown className='input-group-prepend'>
-                                    <Dropdown.Toggle
-                                        variant=''
-                                        className='btn btn-outline dropdown-toggle'
-                                        type='button'
-                                        data-toggle='dropdown'
-                                    >
+                            <div className='col-xl-2'>
 
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu className='dropdown-menu'>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Action
-                                        </Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Another action
-                                        </Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Something else here
-                                        </Dropdown.Item>
-                                        <div
-                                            role='separator'
-                                            className='dropdown-divider'
-                                        ></div>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Separated link
-                                        </Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>{' '}
+                                <Select
+                                    defaultValue={options.find(option => option.value === 'Multiple (55)')}
+                                    onChange={setSelectedOption}
+                                    options={options}
+                                    style={{
+                                        lineHeight: '10px',
+                                        color: '#7e7e7e',
+                                        paddingLeft: ' 15px',
+                                    }}
+                                />
+                            </div>
+                            <div className='col-xl-2'>
+
+                                <Select
+                                    defaultValue={options.find(option => option.value === 'Custom')}
+                                    onChange={setSelectedOption}
+                                    options={options}
+                                    style={{
+                                        lineHeight: '10px',
+                                        color: '#7e7e7e',
+                                        paddingLeft: ' 15px',
+                                    }}
+                                />
                             </div>
                             <Dropdown>
                                 <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
                                     Add filter option
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href='#'>Unit</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Unit or Tenant</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Type</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Start-end</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Rent</Dropdown.Item>
+                                    <Dropdown.Item href='#'>Days remaning</Dropdown.Item>
+                                    <Dropdown.Item href='#'>most recent event</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Card.Header>
@@ -97,27 +136,46 @@ const AnAccountingBills = () => {
                             <Table responsive bordered>
                                 <thead>
                                     <tr>
-                                        <th>{t('LISTED')}</th>
-                                        <th>{t('AVAILABLE')}</th>
-                                        <th>{t('UNIT')}</th>
-                                        <th>{t('BEDS')}</th>
-                                        <th>{t('BATHS')}</th>
-                                        <th>{t('SIZE')}</th>
-                                        <th className='remove-listing-rent'>{t('LISTING RENT')}</th>
+                                        <th className="width50"></th>
+                                        <th>{t('PAID')}</th>
+                                        <th>{t('DUE')}</th>
+                                        <th>{t('VENDOR OF COMPANY')}</th>
+                                        <th>{t('MEMO')}</th>
+                                        <th>{t('REF NO')}</th>
+                                        <th></th>
+                                        <th className='remove-listing-rent'>{t('AMOUNT')}</th>
                                         <th className='remove-th'></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><Link to="/" className='listing-listed'>7/1/2022</Link></td>
-                                        <td>7/1/2023</td>
-                                        <td>Garden Row (multi building complex)-2D</td>
-                                        <td>1 Bed</td>
-                                        <td>2 Bath</td>
-                                        <td>700</td>
-                                        <td className='listing-rent'>
-                                            $ 599
+                                        <td>
+                                            <div className="custom-control custom-checkbox checkbox-success check-lg mr-3">
+                                                <input
+                                                    type="checkbox"
+                                                    className="custom-control-input"
+                                                    id="customCheckBox1"
+                                                    onClick={() => chackboxFun()}
+                                                    required=""
+                                                />
+                                                <label
+                                                    className="custom-control-label"
+                                                    htmlFor="customCheckBox1"
+                                                ></label>
+                                            </div>
                                         </td>
+                                        <td>
+                                            <Badge variant="warning light">OVERDUE</Badge>
+                                        </td>
+                                        <td>7/17/2022</td>
+
+                                        <td>Garden Row LLC</td>
+                                        <td>
+                                            Eviction fees / consult
+                                        </td>
+                                        <td>DC-7771</td>
+                                        <td></td>
+                                        <td className='listing-rent'>$ 40,023</td>
                                         <td className="remove-td">
                                             <Dropdown>
                                                 <Dropdown.Toggle
@@ -127,14 +185,15 @@ const AnAccountingBills = () => {
                                                     {svg1}
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item>Post to craigslist</Dropdown.Item>
-                                                    <Dropdown.Item>Export to html</Dropdown.Item>
-                                                    <Dropdown.Item>Dlist unit</Dropdown.Item>
-                                                    <Dropdown.Item>Edit listing</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Delete')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Email')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Print')}</Dropdown.Item>
+                                                    <Dropdown.Item>{t('Edit')}</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </td>
                                     </tr>
+
                                 </tbody>
                             </Table>
                         </Card.Body>
@@ -144,85 +203,65 @@ const AnAccountingBills = () => {
         },
         {
             name: 'Profile',
-            title: t('Unlisted units'),
+            title: t('Invoice Files') + '(0)',
             content: (
                 <Col lg={12}>
                     <Card>
                         <Card.Header className='listing-card-header'>
-                            <div className='input-group col-sm-2 input-group-sm'>
-                                <input type='text' className='form-control' placeholder={t('All') + ' ' + t('rentals')} />
-                                <Dropdown className='input-group-prepend'>
-                                    <Dropdown.Toggle
-                                        variant=''
-                                        className='btn btn-outline dropdown-toggle'
-                                        type='button'
-                                        data-toggle='dropdown'
-                                    >
-
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu className='dropdown-menu'>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Action
-                                        </Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Another action
-                                        </Dropdown.Item>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Something else here
-                                        </Dropdown.Item>
-                                        <div
-                                            role='separator'
-                                            className='dropdown-divider'
-                                        ></div>
-                                        <Dropdown.Item className='dropdown-item' to='#'>
-                                            Separated link
-                                        </Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>{' '}
+                            {/* <input type='text' name='search'></input> */}
+                            <div className='input-group input-info-o' style={{width: '200px'}}>
+                                
+                                <input
+                                    type='text'
+                                    className='form-control'
+                                    placeholder='Search'
+                                    style={{paddingBottom: '0px', paddingTop:'0px', height: '40px'}}
+                                />
                             </div>
-                            <Dropdown>
-                                <Dropdown.Toggle variant='' className='pl-0 mt-1 mb-2'>
-                                    Add filter option
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href='#'>Unit</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <div className='col-xl-2'>
+                                <Select
+                                    defaultValue={options.find(option => option.value === 'Multiple (55)')}
+                                    onChange={setSelectedOption}
+                                    options={options}
+                                    style={{
+                                        lineHeight: '10px',
+                                        color: '#7e7e7e',
+                                        paddingLeft: ' 15px',
+                                    }}
+                                />
+                            </div>
+                            <div className='col-xl-2'>
+                                <Select
+                                    defaultValue={options.find(option => option.value === 'Custom')}
+                                    onChange={setSelectedOption}
+                                    options={options}
+                                    style={{
+                                        lineHeight: '10px',
+                                        color: '#7e7e7e',
+                                        paddingLeft: ' 15px',
+                                    }}
+                                />
+                            </div>
+                            <Button className='mr-2 btn-sm' variant='outline-dark'>
+                                    {t('Upload invoice files')}
+                                </Button>
+
                         </Card.Header>
                         <Card.Body>
                             <Table responsive bordered>
                                 <thead>
                                     <tr>
-                                        <th>{t('STATUS')}</th>
-                                        <th>{t('LEASE END')}</th>
-                                        <th>{t('NEXT LEASE')}</th>
-                                        <th>{t('UNIT')}</th>
-                                        <th>{t('TENANTS')}</th>
+                                        <th className="width50"></th>
+                                        <th>{t('FILENAME')}</th>
+                                        <th>{t('UPLOADED')}</th>
+                                        <th>{t('CREATED BY')}</th>
+                                        <th></th>
+                                        <th></th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><Link to="/" className='listing-listed'>List unit</Link></td>
-                                        <td>7/1/2023</td>
-                                        <td>--</td>
-                                        <td>Garden Row (multi building complex)-2D</td>
-                                        <td>Clifton Munoz, Virginia Gonzalez</td>
-                                    </tr>
-                                    <tr>
-                                        <td><Link to="/" className='listing-listed'>List unit</Link></td>
-                                        <td>7/1/2023</td>
-                                        <td>--</td>
-                                        <td>Garden Row (multi building complex)-2D</td>
-                                        <td>Clifton Munoz, Virginia Gonzalez</td>
-                                    </tr>
-                                    <tr>
-                                        <td><Link to="/" className='listing-listed'>List unit</Link></td>
-                                        <td>7/1/2023</td>
-                                        <td>--</td>
-                                        <td>Garden Row (multi building complex)-2D</td>
-                                        <td>Clifton Munoz, Virginia Gonzalez</td>
-                                    </tr>
-                                </tbody>
+                                 </tbody>
                             </Table>
                         </Card.Body>
                     </Card>

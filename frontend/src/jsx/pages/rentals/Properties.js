@@ -67,7 +67,7 @@ const AnRentalsProperties = () => {
                             variant='outline-info'
                             size='xs'
                             className='mr-2 outline'
-                            title=' Managemnet fees'
+                            title={t('Managemnet') + t('fees')}
                         >
                             <Dropdown.Item href='#'>{t('Collect')} {t('Management')} {t('fees')}</Dropdown.Item>
                             <Dropdown.Item href='#'>{t('Pay')} {t('out')} {t('income')} {t('management')} {t('accounts')}</Dropdown.Item>

@@ -100,7 +100,8 @@ const AnAccountingBanking = () => {
                                             <td>
                                             </td>
                                             <td className="py-2" style={{display: 'inline-flex'}}>
-                                                <span style={{paddingTop: '10px'}}>$4,9000</span><span> {drop}</span></td>
+                                                <span style={{paddingTop: '10px'}}>$4,9000</span><span> {drop}</span>
+                                            </td>
                                         </tr>
 
                                     </tbody>
