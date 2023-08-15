@@ -18,3 +18,12 @@
 .range-picker-input{
     border: 0;
 }
+.banking-name-up{
+    color: blue;
+}
+.banking-name-down {
+    font-style: italic;
+}
+.banking-name-down > p {
+    margin-bottom: 0px;
+}
