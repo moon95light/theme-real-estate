@@ -50,10 +50,6 @@ function Register(props) {
                         <div className='row no-gutters'>
                             <div className='col-xl-12'>
                                 <div className='auth-form'>
-                                    {/* <div className='text-center mb-3'>
-                                        <img src={logo} alt="" />
-                                    </div> */}
-
                                     <h4 className='text-center mb-4 '>Sign up your account</h4>
                                     {props.errorMessage && (
                                         <div className='bg-red-300 text-danger border border-red-900 p-1 my-2'>

@@ -5,7 +5,7 @@ import { loadingToggleAction,loginAction,
 } from '../../store/actions/AuthActions';
 
 // image
-import logo from "../../images/logo-full.png";
+import logo from "../../images/logo1.gif";
 import loginbg from "../../images/pic1.png";
 
 function Login (props) {
@@ -45,7 +45,7 @@ function Login (props) {
 			<div className="login-aside text-center  d-flex flex-column flex-row-auto">
 				<div className="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
 					<div className="text-center mb-4 pt-5">
-						<img src={logo} alt="" width="200"/>
+						<img src={logo} alt="" width="46"/>
 					</div>
 					<h3 className="mb-2">Welcome back!</h3>
 					<p>User Experience & Interface Design <br />Strategy SaaS Solutions</p>
