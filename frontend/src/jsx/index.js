@@ -47,6 +47,9 @@ import AnTasksRecurringTasks from "./pages/tasks/RecurringTasks";
 import AnCommunicationEmails from "./pages/communication/Emails";
 import AnCommunicationTextMessages from "./pages/communication/TextMessages";
 
+import AnAddProperty from './pages/rentals/others/AddProperty';
+// Antonio ENDS
+
 /// Dashboard
 import Home from "./components/Dashboard/Home";
 import Analytics from "./components/Dashboard/Analytics";
@@ -187,6 +190,10 @@ const Markup = () => {
     
     {url: "an-emails", component: AnCommunicationEmails },
     {url: "an-textmessages", component: AnCommunicationTextMessages },
+
+
+    // add properties (antonio)
+    {url: "an-properties/an-addproperty", component: AnAddProperty},
 
     /// Dashboard
     { url: "", component: Home },

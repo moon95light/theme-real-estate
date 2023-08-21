@@ -58,7 +58,7 @@ const AnRentalsProperties = () => {
                 <div className="page-titles">
                     <h4 className="page-title">{t('Properties')}</h4>
                     <div className="property-buttons">
-                        <button type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('properties')}</button>
+                        <Link to="an-properties/an-addproperty" type="button" className="mr-2 btn btn-xs btn-success" id="btn-success">{t('Add')} {t('properties')}</Link>
 
                         <DropdownButton
                             as={ButtonGroup}
